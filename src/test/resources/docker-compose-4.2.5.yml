@@ -1,0 +1,93 @@
+version: "3.8"
+services:
+  domibus:
+    container_name: domibus
+    build:
+      context: ./ap-tomcat
+      dockerfile: Dockerfile-4.2.5-jms
+      labels:
+        - "dk.edelivery=DOMIBUS-APP"
+    env_file: ./ap-tomcat/.env
+    links:
+      - "db"
+    depends_on:
+      - "db"
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+      JAVA_OPTS: "$JAVA_OPTS -Ddb.host=db -Dmq.host=activemq -Ddynamic.discovery=false"
+    volumes:
+    - ./ap-tomcat/domibus/domibus-compose.properties:/usr/local/tomcat/domibus/domibus.properties
+  ws:
+    container_name: ws1
+    build:
+      context: ./ap-tomcat
+      dockerfile: Dockerfile-4.2.5-clean
+      labels:
+        - "dk.edelivery=AP-APP"
+    env_file: ./ap-tomcat/.env
+    links:
+      - "db"
+    depends_on:
+      - "db"
+    ports:
+      - 8081:8080
+    restart: always
+    environment:
+      JAVA_OPTS: "$JAVA_OPTS -Ddb.host=db -Ddynamic.discovery=false"
+  db:
+    container_name: db
+    build: 
+      context: ./ap-mysql
+      dockerfile: Dockerfile-4.2.5
+      labels:
+        - "dk.edelivery=AP-DB"
+    env_file: ./ap-mysql/.env
+    ports:
+      - "3307:3306"
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+  activemq:
+    container_name: activemq
+    build:
+      context: ./mq
+      labels:
+        - "dk.edelivery=AP-MQ"
+    ports:
+      - 61616:61616
+      - 8161:8161
+      - 61613:61613
+      - 1099:1099
+  ws2:
+    container_name: ws2
+    build:
+      context: ./ap-tomcat
+      dockerfile: Dockerfile-4.2.5-clean
+      labels:
+        - "dk.edelivery=AP2-APP"
+    env_file: ./ap-tomcat/.env
+    links:
+      - "db2"
+    depends_on:
+      - "db2"
+    ports:
+      - 8082:8080
+    restart: always
+    environment:
+      JAVA_OPTS: "$JAVA_OPTS -Ddb.host=db2 -Ddynamic.discovery=false"
+  db2:
+    container_name: db2
+    build:
+      context: ./ap-mysql
+      dockerfile: Dockerfile-4.2.5
+      labels:
+        - "dk.edelivery=AP-DB"
+    env_file: ./ap-mysql/.env
+    restart: always
+    volumes:
+      - db2:/var/lib/mysql
+volumes:
+  db:
+  db2:

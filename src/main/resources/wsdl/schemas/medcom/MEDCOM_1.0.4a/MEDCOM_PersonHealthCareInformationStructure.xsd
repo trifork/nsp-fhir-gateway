@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:medcom="urn:oio:medcom:cprservice:1.0.4a"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:oio:medcom:cprservice:1.0.4a" 
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+    <xs:include schemaLocation="MEDCOM_PersonPublicHealthInsuranceStructure.xsd"/>
+    <xs:include schemaLocation="MEDCOM_CurrentGeneralPractitionerStructure.xsd"/>
+    <xs:include schemaLocation="MEDCOM_PriorGeneralPractitionerStructure.xsd"/>
+    
+    <xs:element name="PersonHealthCareInformationStructure" type="medcom:PersonHealthCareInformationStructureType">
+        <xs:annotation>
+            <xs:documentation>Information vedr. en Persons læge og sygesikringsgruppe</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="PersonHealthCareInformationStructureType">
+        <xs:annotation>
+            <xs:documentation>Informationer vedr. en persons læge og sygesikringsgruppe.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="medcom:CurrentGeneralPractitionerStructure" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Informationer vedr. personens aktuelle læge.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="medcom:PriorGeneralPractitionerStructure" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation>Informationer vedr. personens tidligere læge.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="medcom:PersonPublicHealthInsurance">
+                <xs:annotation>
+                    <xs:documentation>Informationer vedr. personens sygesikringsgruppe.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

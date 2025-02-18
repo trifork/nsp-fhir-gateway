@@ -1,0 +1,58 @@
+<StandardBusinessDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader MedComStandardBusinessDocumentHeader_20210217.xsd">
+  <StandardBusinessDocumentHeader>
+    <HeaderVersion>string</HeaderVersion>
+    <!--1 or more repetitions:-->
+    <Sender>
+      <Identifier Authority="string">string</Identifier>
+      <!--Zero or more repetitions:-->
+      <ContactInformation>
+        <Contact>string</Contact>
+        <!--Optional:-->
+        <EmailAddress>string</EmailAddress>
+        <!--Optional:-->
+        <FaxNumber>string</FaxNumber>
+        <!--Optional:-->
+        <TelephoneNumber>string</TelephoneNumber>
+        <!--Optional:-->
+        <ContactTypeIdentifier>string</ContactTypeIdentifier>
+      </ContactInformation>
+    </Sender>
+    <!--1 or more repetitions:-->
+    <Receiver>
+      <Identifier Authority="string">string</Identifier>
+      <!--Zero or more repetitions:-->
+      <ContactInformation>
+        <Contact>string</Contact>
+        <!--Optional:-->
+        <EmailAddress>string</EmailAddress>
+        <!--Optional:-->
+        <FaxNumber>string</FaxNumber>
+        <!--Optional:-->
+        <TelephoneNumber>string</TelephoneNumber>
+        <!--Optional:-->
+        <ContactTypeIdentifier>string</ContactTypeIdentifier>
+      </ContactInformation>
+    </Receiver>
+    <DocumentIdentification>
+      <Standard>string</Standard>
+      <TypeVersion>string</TypeVersion>
+      <InstanceIdentifier>string</InstanceIdentifier>
+      <Type>string</Type>
+      <!--Optional:-->
+      <MultipleType>false</MultipleType>
+      <CreationDateAndTime>2007-10-26T08:36:28</CreationDateAndTime>
+    </DocumentIdentification>
+    <!--Optional:-->
+    <BusinessScope>
+      <!--Zero or more repetitions:-->
+      <Scope>
+        <Type>string</Type>
+        <InstanceIdentifier>string</InstanceIdentifier>
+        <!--Optional:-->
+        <Identifier>string</Identifier>
+      </Scope>
+    </BusinessScope>
+  </StandardBusinessDocumentHeader>
+  <!--1 to 2 repetitions:-->
+  <BinaryContent mimeType="token" encoding="UTF-8">cXVhZQ==</BinaryContent>
+</StandardBusinessDocument>

@@ -1,0 +1,47 @@
+<Emessage xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2005/08/07/">
+    <Envelope>
+        <Sent>
+            <Date>2021-06-24</Date>
+            <Time>00:02</Time>
+        </Sent>
+        <Identifier>EPIC394310433</Identifier>
+        <AcknowledgementCode>pluspositivkvitt</AcknowledgementCode>
+    </Envelope>
+    <NotificationOfDischarge>
+        <Letter>
+            <Identifier>EPIC394310433</Identifier>
+            <VersionCode>XD1730C</VersionCode>
+            <StatisticalCode>XDIS17</StatisticalCode>
+            <Authorisation>
+                <Date>2021-06-24</Date>
+                <TimeWithSec>00:02:17</TimeWithSec>
+            </Authorisation>
+            <TypeCode>XDIS17</TypeCode>
+            <StatusCode>nytbrev</StatusCode>
+            <NotificationIdentifier>000000000009ADA35A3185937ABF8C5B</NotificationIdentifier>
+        </Letter>
+        <Sender>
+            <EANIdentifier>5790002515200</EANIdentifier>
+            <Identifier>1301812</Identifier>
+            <IdentifierCode>sygehusafdelingsnummer</IdentifierCode>
+            <OrganisationName>Rigshospitalet</OrganisationName>
+            <DepartmentName>Videnc. Reum/Ryg senge GLO</DepartmentName>
+            <UnitName>Rygkirurgi, Led- og Bindevvssygdo*</UnitName>
+            <TelephoneSubscriberIdentifier>38633863</TelephoneSubscriberIdentifier>
+        </Sender>
+        <Receiver>
+            <EANIdentifier>5790002508226</EANIdentifier>
+            <Identifier>173</Identifier>
+            <IdentifierCode>kommunenummer</IdentifierCode>
+            <OrganisationName>Kommunens kommunikation, Lyngby-Ta*</OrganisationName>
+        </Receiver>
+        <Patient>
+            <CivilRegistrationNumber>1111111111</CivilRegistrationNumber>
+            <EpisodeOfCareStatusCode>udskrevet_til_hjemmet</EpisodeOfCareStatusCode>
+        </Patient>
+        <Discharge>
+            <Date>2021-06-24</Date>
+            <Time>00:02</Time>
+        </Discharge>
+    </NotificationOfDischarge>
+</Emessage>

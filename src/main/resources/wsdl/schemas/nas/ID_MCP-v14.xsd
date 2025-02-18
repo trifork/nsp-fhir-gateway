@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   License: Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)   
+   Copyright NSI (www.nsi.dk), 2013
+-->
+<xsd:schema 
+    targetNamespace="http://nsi.dk/advis/v10"   
+    xmlns="http://nsi.dk/advis/v10"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+    
+    <!-- ================================================= -->
+    <!--       NSI Notification payload structure          -->
+    <!-- ================================================= -->
+    
+    <xsd:element name="NotifyContent">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:any namespace="##any" processContents="lax"
+                    minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="id" type="xsd:string" use="optional"/>
+            <xsd:attribute name="idType" type="xsd:anyURI" use="optional"/>
+            <xsd:attribute name="isSystemNotification" type="xsd:boolean" use="optional"/>
+            <xsd:anyAttribute namespace="##other" processContents="lax"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <!-- ================================================= -->
+    <!--             NSI Notification filtering            -->
+    <!-- ================================================= -->
+
+    <xsd:element name="IDFilter">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:choice minOccurs="0" maxOccurs="1">
+                    <xsd:element ref="IDList" />
+                    <xsd:sequence>
+                        <xsd:element ref="SingleID" minOccurs="1" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:choice>
+                <xsd:element ref="XPathFilter" minOccurs="0" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:anyAttribute namespace="##other" processContents="lax"/>            
+        </xsd:complexType>
+    </xsd:element>    
+
+    <xsd:element name="SingleID">
+        <xsd:complexType>
+            <xsd:attribute name="id" type="xsd:string" use="required"/>
+            <xsd:attribute name="idType" type="xsd:anyURI" use="required"/>
+            <xsd:anyAttribute namespace="##other" processContents="lax"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <xsd:element name="IDList">
+        <xsd:complexType>
+            <xsd:attribute name="name" type="xsd:string" use="required"/>
+            <xsd:anyAttribute namespace="##other" processContents="lax"/>
+        </xsd:complexType>
+    </xsd:element>    
+    
+    <xsd:element name="XPathFilter">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:any namespace="##any" processContents="lax"
+                    minOccurs="1" maxOccurs="1"/>
+            </xsd:sequence>
+            <xsd:attribute name="xpathVersion" type="xsd:string" use="required"/>
+            <xsd:anyAttribute namespace="##other" processContents="lax"/>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

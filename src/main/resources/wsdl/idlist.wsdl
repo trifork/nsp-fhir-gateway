@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  The MIT License
+  
+  Original work sponsored and donated by National Board of e-Health (NSI), Denmark 
+  (http://www.nsi.dk)
+  
+  Copyright (C) 2012 National Board of e-Health (NSI), Denmark (http://www.nsi.dk)
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy of
+  this software and associated documentation files (the "Software"), to deal in
+  the Software without restriction, including without limitation the rights to
+  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+  of the Software, and to permit persons to whom the Software is furnished to do
+  so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  -->
+<wsdl:definitions name="NSI-WS-IDList"
+									xmlns="http://schemas.xmlsoap.org/wsdl/" 
+									xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+									xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+									xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+									xmlns:wsn-brw="http://docs.oasis-open.org/wsn/brw-2" 
+									xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+									xmlns:tns="http://www.nsi.dk/2012/12/nas/idlist"
+                  targetNamespace="http://www.nsi.dk/2012/12/nas/idlist">
+
+	<wsdl:import namespace="http://docs.oasis-open.org/wsn/brw-2"
+		location="brw-2.wsdl">
+	</wsdl:import>
+
+	<!-- ===================== Types Definitions ====================== -->
+	<wsdl:types>
+		<!-- CreateIDList schema definitions -->
+		<xsd:schema>
+			<xsd:import namespace="http://www.nsi.dk/2012/12/nas/idlist"
+				schemaLocation="schemas/nas/idlist.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<wsdl:message name="CreateIDListRequest">
+		<wsdl:part name="CreateIDListRequest" element="tns:CreateIDListRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="CreateIDListResponse">
+		<wsdl:part name="CreateIDListResponse" element="tns:CreateIDListResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="DestroyIDListRequest">
+		<wsdl:part name="DestroyIDListRequest" element="tns:DestroyIDListRequest" />
+	</wsdl:message>
+
+	<wsdl:message name="DestroyIDListResponse">
+		<wsdl:part name="DestroyIDListResponse" element="tns:DestroyIDListResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="DGWSFault">
+		<wsdl:part element="medcom:FaultCode" name="DGWSFault">
+		</wsdl:part>
+	</wsdl:message>
+
+	<!-- ========= IDList PortType Definition =========== -->
+	<wsdl:portType name="IDList">
+		<!-- IDList extension -->
+		<wsdl:operation name="CreateIDList">
+			<wsdl:input message="tns:CreateIDListRequest" />
+			<wsdl:output message="tns:CreateIDListResponse" />
+			<wsdl:fault name="DGWSFault" message="tns:DGWSFault" />
+		</wsdl:operation>
+		<wsdl:operation name="DestroyIDList">
+			<wsdl:input message="tns:DestroyIDListRequest" />
+			<wsdl:output message="tns:DestroyIDListResponse" />
+			<wsdl:fault name="DGWSFault" message="tns:DGWSFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="IDListSoap" type="tns:IDList">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+		<wsdl:operation name="CreateIDList">
+			<soap:operation soapAction="http://www.nsi.dk/nas/idlist#CreateIDList" />
+			<wsdl:input>
+				<soap:header message="wsn-brw:SecurityHeader" part="security_header"
+					use="literal" />
+				<soap:header message="wsn-brw:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header message="wsn-brw:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DGWSFault">
+				<soap:fault use="literal" name="DGWSFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DestroyIDList">
+			<soap:operation soapAction="http://www.nsi.dk/nas/idlist#DestroyIDList" />
+			<wsdl:input>
+				<soap:header message="wsn-brw:SecurityHeader" part="security_header"
+					use="literal" />
+				<soap:header message="wsn-brw:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header message="wsn-brw:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DGWSFault">
+				<soap:fault use="literal" name="DGWSFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<wsdl:service name="IDListService">
+		<wsdl:port name="Soap" binding="tns:IDListSoap">
+			<soap:address location="http://localhost:8080/idlist/service" />
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

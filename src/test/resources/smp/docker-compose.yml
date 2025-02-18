@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  ws:
+    build:
+      context: ./smp-tomcat
+      labels:
+        - "dk.edelivery=SMP-APP"
+    env_file: ./smp-tomcat/.env
+    links:
+      - "db"
+    depends_on:
+      - "db"
+    ports:
+      - "80:8080"
+    restart: always
+  db:
+    build:
+      context: ./smp-mysql
+      labels:
+        - "dk.edelivery=SMP-DB"
+    env_file: ./smp-mysql/.env
+    ports:
+        - "3306:3306"
+    restart: always

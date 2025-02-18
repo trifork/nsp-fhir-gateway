@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  activemq:
+    image: webcenter/activemq
+    ports:
+      - 61616:61616
+      - 8161:8161
+      - 61613:61613
+    environment:
+      ACTIVEMQ_ADMIN_LOGIN: admin
+      ACTIVEMQ_ADMIN_PASSWORD: admin

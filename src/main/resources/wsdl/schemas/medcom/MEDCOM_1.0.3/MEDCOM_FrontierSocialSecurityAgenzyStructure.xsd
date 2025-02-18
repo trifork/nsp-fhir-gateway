@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:medcom="urn:oio:medcom:cprservice:1.0.3"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:mc100="http://rep.oio.dk/medcom.sundcom.dk/xml/schemas/2007/02/01/"
+    targetNamespace="urn:oio:medcom:cprservice:1.0.3" elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+    <xs:include schemaLocation="MEDCOM_FrontierSocialSecurity.xsd"/>
+
+    <xs:element name="FrontierSocialSecurityAgenzyStructure" type="medcom:FrontierSocialSecurityAgenzyStructureType">
+        <xs:annotation>
+            <xs:documentation>Grænsegængers sociale forsikringsinstans.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:complexType name="FrontierSocialSecurityAgenzyStructureType">
+        <xs:annotation>
+            <xs:documentation>Grænsegængers sociale forsikringsoplysninger.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="medcom:FrontierSocialSecurityAgencyIdentifier">
+                <xs:annotation>
+                    <xs:documentation>Grænsegængers forsikringsinstans kode.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="medcom:FrontierSocialSecurityAgency">
+                <xs:annotation>
+                    <xs:documentation>Grænsegængers forsikringsinstans.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="medcom:FrontierSocialSecurityIdentifier">
+                <xs:annotation>
+                    <xs:documentation>Grænsegængers forsikringsnummer.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

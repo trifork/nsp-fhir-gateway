@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://www.w3.org/2003/05/soap-envelope">
+    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsa:Action>urn:ihe:iti:2007:RegisterDocumentSet-bResponse</wsa:Action>
+        <wsa:RelatesTo>urn:uuid:5da500db-19b7-4e7f-86ee-00e73d8bbe33</wsa:RelatesTo>
+    </soapenv:Header>
+    <soapenv:Body>
+        <rs:RegistryResponse xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                             status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success"/>
+    </soapenv:Body>
+</soapenv:Envelope>

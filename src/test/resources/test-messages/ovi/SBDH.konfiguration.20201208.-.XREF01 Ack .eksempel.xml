@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sh:StandardBusinessDocument xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader">
+	<StandardBusinessDocumentHeader xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader file:/C:/Users/ovi/OneDrive%20-%20MedCom/Standarder/Modernisering/eDelivery/SBDH/SBDH20040506-02/StandardBusinessDocumentHeader.xsd">
+		<HeaderVersion>1.0</HeaderVersion>
+		<Sender>
+			<Identifier Authority="iso6523-actorid-upis">0088:5790000201389</Identifier>
+		</Sender>
+		<Receiver>
+			<Identifier Authority="iso6523-actorid-upis">0088:5790000121526</Identifier>
+		</Receiver>
+		<DocumentIdentification>
+			<Standard>AcceptanceAcknowledgement</Standard>
+			<TypeVersion>ebbp-signals-2.0</TypeVersion>
+			<InstanceIdentifier>9a6ff822-08de-5a6f-9670-9fa4b9d2f0dc</InstanceIdentifier>
+			<Type>AA</Type>
+			<MultipleType>false</MultipleType>
+			<CreationDateAndTime>2020-11-06T16-19-00+01.00</CreationDateAndTime>
+		</DocumentIdentification>
+		<BusinessScope>
+			<!-- DOCUMENTID -->
+			<Scope> 
+				<Type>DOCUMENTID</Type> 
+					<InstanceIdentifier>urn:dk:healthcare:specification:ebbp:schema:xsd:ebbp-signals-2.0##urn:docs.oasis-open.org/ebxml-bp/ebbp-signals-2.0</InstanceIdentifier>
+					<Identifier>medcom-docid-qns</Identifier>
+			</Scope>
+			<!-- PROCESSID -->
+			<Scope> 
+				<Type>PROCESSID</Type> 
+				<InstanceIdentifier>urn:www.digst.dk:profile:sdn-emergence</InstanceIdentifier>
+				<!-- all options -->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:sdn-emergence</InstanceIdentifier-->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:sdn-distribution</InstanceIdentifier-->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:fod-emergence</InstanceIdentifier-->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:fod-distribution</InstanceIdentifier-->
+				<Identifier>dk-messaging-procid</Identifier>
+			</Scope>
+		</BusinessScope>
+	</StandardBusinessDocumentHeader>
+	<sh:BinaryContent xmlns="http://peppol.eu/xsd/ticc/envelope/1.0" mimeType="application/XML" encoding="UTF-8">			PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGJwc3NpZ25hbDpBY2NlcHRhbmNlQWNrbm93bGVkZ2VtZW50IHhtbG5zOmRzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjIgogeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiCiB4bWxuczpicHNzaWduYWw9Imh0dHA6Ly9kb2NzLm9hc2lzLW9wZW4ub3JnL2VieG1sLWJwL2ViYnAtc2lnbmFscy0yLjAiCiB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIgogeHNpOnNjaGVtYUxvY2F0aW9uPSJodHRwOi8vZG9jcy5vYXNpcy1vcGVuLm9yZy9lYnhtbC1icC9lYmJwLXNpZ25hbHMtMi4wIGZpbGU6L0M6L1VzZXJzL292aS9NZWRDb20vTWVkQ29tJTIwTW9kZXJuaXNlcmluZ3MlMjBQaWxvdCUyMDIwMjAlMjAtJTIwRG9rdW1lbnRlci9PcmdhbmlzYXRpb25lci9NZWRDb20vS29uZmlndXJhdGlvbmVyL1NCREglMjBzdW5kaGVkc2tvbmZpZ3VyYXRpb24vZWJicC1zaWduYWxzLTIuMC40LnhzZCI+CiAgICA8YnBzc2lnbmFsOk9yaWdpbmFsTWVzc2FnZUlkZW50aWZpZXI+T3JpZ2luYWxNZXNzYWdlSWRlbnRpZmllcjA8L2Jwc3NpZ25hbDpPcmlnaW5hbE1lc3NhZ2VJZGVudGlmaWVyPgogICAgPGJwc3NpZ25hbDpPcmlnaW5hbERvY3VtZW50SWRlbnRpZmllcj5PcmlnaW5hbERvY3VtZW50SWRlbnRpZmllcjA8L2Jwc3NpZ25hbDpPcmlnaW5hbERvY3VtZW50SWRlbnRpZmllcj4KICAgIDxicHNzaWduYWw6T3JpZ2luYWxNZXNzYWdlRGF0ZVRpbWU+MjAwNi0wNS0wNFQxODoxMzo1MS4wPC9icHNzaWduYWw6T3JpZ2luYWxNZXNzYWdlRGF0ZVRpbWU+CiAgICA8YnBzc2lnbmFsOlRoaXNNZXNzYWdlRGF0ZVRpbWU+MjAwNi0wNS0wNFQxODoxMzo1MS4wPC9icHNzaWduYWw6VGhpc01lc3NhZ2VEYXRlVGltZT4KICAgIDxicHNzaWduYWw6RnJvbVBhcnR5SW5mbyB0eXBlPSJ0eXBlMCI+RnJvbVBhcnR5SW5mbzA8L2Jwc3NpZ25hbDpGcm9tUGFydHlJbmZvPgogICAgPGJwc3NpZ25hbDpUb1BhcnR5SW5mbyB0eXBlPSJ0eXBlMSI+VG9QYXJ0eUluZm8wPC9icHNzaWduYWw6VG9QYXJ0eUluZm8+CiAgICA8YnBzc2lnbmFsOkZyb21Sb2xlIG5hbWU9Im5hbWUwIiB4bGluazp0eXBlPSJzaW1wbGUiIHhsaW5rOmhyZWY9Imh0dHA6Ly93d3cub3h5Z2VueG1sLmNvbS8iLz4KICAgIDxicHNzaWduYWw6VG9Sb2xlIG5hbWU9Im5hbWUxIiB4bGluazp0eXBlPSJzaW1wbGUiIHhsaW5rOmhyZWY9Imh0dHA6Ly93d3cub3h5Z2VueG1sLmNvbS8iLz4KICAgIDxicHNzaWduYWw6UHJvY2Vzc1NwZWNpZmljYXRpb25JbmZvIGluc3RhbmNlVmVyc2lvbj0iaW5zdGFuY2VWZXJzaW9uMCIgbmFtZT0ibmFtZTIiIHhsaW5rOnR5cGU9InNpbXBsZSIgeGxpbms6aHJlZj0iaHR0cDovL3d3dy5veHlnZW54bWwuY29tLyIKICAgICAgICAgdXVpZD0idXVpZDAiLz4KICAgIDxicHNzaWduYWw6Q29sbGFib3JhdGlvbklkZW50aWZpZXI+Q29sbGFib3JhdGlvbklkZW50aWZpZXIwPC9icHNzaWduYWw6Q29sbGFib3JhdGlvbklkZW50aWZpZXI+CiAgICA8YnBzc2lnbmFsOkJ1c2luZXNzQWN0aXZpdHlJZGVudGlmaWVyPkJ1c2luZXNzQWN0aXZpdHlJZGVudGlmaWVyMDwvYnBzc2lnbmFsOkJ1c2luZXNzQWN0aXZpdHlJZGVudGlmaWVyPgo8L2Jwc3NpZ25hbDpBY2NlcHRhbmNlQWNrbm93bGVkZ2VtZW50Pgo=
+		</sh:BinaryContent>
+</sh:StandardBusinessDocument>

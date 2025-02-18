@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<db:configuration xmlns:db="http://domibus.eu/configuration" party="medcom-edelivery-dds (funktionscertifikat)">
+
+    <mpcs>
+        <mpc name="defaultMpc"
+             qualifiedName="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC"
+             enabled="true"
+             default="true"
+             retention_downloaded="0"
+             retention_undownloaded="14400"/>
+    </mpcs>
+    <businessProcesses>
+        <roles>
+            <role name="defaultInitiatorRole"
+                  value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator"/>
+            <role name="defaultResponderRole"
+                  value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder"/>
+        </roles>
+        <parties>
+            <partyIdTypes>
+                <partyIdType name="partyTypeUrn" value="urn:fdc:digst.dk:2021:identifiers:ap"/>
+            </partyIdTypes>
+            <party name="medcom-edelivery-dds (funktionscertifikat)"
+                   endpoint="https://ap-dds.nsptest.medcom.dk/domibus/services/msh">
+                <identifier partyId="medcom-edelivery-dds (funktionscertifikat)" partyIdType="partyTypeUrn"/>
+            </party>
+        </parties>
+        <meps>
+            <mep name="oneway" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/oneWay"/>
+            <mep name="twoway" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/twoWay"/>
+            <binding name="push" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push"/>
+            <binding name="pushAndPush" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/push-and-push"/>
+        </meps>
+        <properties>
+            <property name="originalSenderProperty"
+                      key="originalSender"
+                      datatype="string"
+                      required="true"/>
+            <property name="finalRecipientProperty"
+                      key="finalRecipient"
+                      datatype="string"
+                      required="true"/>
+            <propertySet name="eDeliveryPropertySet">
+                <propertyRef property="finalRecipientProperty"/>
+                <propertyRef property="originalSenderProperty"/>
+            </propertySet>
+        </properties>
+        <payloadProfiles>
+            <payload name="businessContentPayload"
+                     cid="cid:message"
+                     required="true"
+                     mimeType="text/xml"/>
+            <payload name="businessContentAttachment"
+                     cid="cid:attachment"
+                     required="false"
+                     mimeType="application/octet-stream"/>
+            <payloadProfile name="MessageProfile" maxSize="40894464"> <!-- maxSize is currently ignored -->
+                <attachment name="businessContentPayload"/>
+                <attachment name="businessContentAttachment"/>
+            </payloadProfile>
+        </payloadProfiles>
+        <securities>
+            <security name="eDeliveryAS4Policy_BST_PKIP"
+                      policy="eDeliveryAS4Policy_BST.xml"
+                      signatureMethod="RSA_SHA256" />
+        </securities>
+        <errorHandlings>
+            <errorHandling name="demoErrorHandling"
+                           errorAsResponse="true"
+                           businessErrorNotifyProducer="true"
+                           businessErrorNotifyConsumer="true"
+                           deliveryFailureNotifyProducer="true"/>
+        </errorHandlings>
+        <agreements>
+            <agreement name="agreement1" value="urn:fdc:digst.dk:2021:agreements:edelivery:ap_provider" type=""/>
+        </agreements>
+        <services>
+            <service name="service1" value="bdx:noprocess" type="tc1"/>
+            <service name="emergenceSDN" value="urn:www.digst.dk:profile:sdn-emergence" type="tc1"/>
+            <service name="distributionSDN" value="urn:www.digst.dk:profile:sdn-distribution" type="tc1"/>
+            <service name="emergenceFOD" value="urn:www.digst.dk:profile:fod-emergence" type="tc1"/>
+            <service name="distributionFOD" value="urn:www.digst.dk:profile:fod-distribution" type="tc1"/>
+        </services>
+        <actions>
+            <action name="tc1Action" value="TC1Leg1"/>
+            <action name="testAction" value="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/test"/>
+        </actions>
+        <as4>
+            <receptionAwareness name="receptionAwareness" retry="12;4;CONSTANT" duplicateDetection="true"/>
+            <reliability name="AS4Reliability" nonRepudiation="true" replyPattern="response"/>
+        </as4>
+        <splittingConfigurations>
+            <splitting name="default"
+                       fragmentSize="500"
+                       compression="true"
+                       joinInterval="1440"/>
+        </splittingConfigurations>
+        <legConfigurations>
+            <legConfiguration name="emergenceSDNAction"
+                              service="emergenceSDN"
+                              action="tc1Action"
+                              defaultMpc="defaultMpc"
+                              reliability="AS4Reliability"
+                              security="eDeliveryAS4Policy_BST_PKIP"
+                              receptionAwareness="receptionAwareness"
+                              propertySet="eDeliveryPropertySet"
+                              payloadProfile="MessageProfile"
+                              errorHandling="demoErrorHandling"
+                              compressPayloads="true"/>
+            <legConfiguration name="emergenceFODAction"
+                              service="emergenceFOD"
+                              action="tc1Action"
+                              defaultMpc="defaultMpc"
+                              reliability="AS4Reliability"
+                              security="eDeliveryAS4Policy_BST_PKIP"
+                              receptionAwareness="receptionAwareness"
+                              propertySet="eDeliveryPropertySet"
+                              payloadProfile="MessageProfile"
+                              errorHandling="demoErrorHandling"
+                              compressPayloads="true"/>
+            <legConfiguration name="distributionSDNAction"
+                              service="distributionSDN"
+                              action="tc1Action"
+                              defaultMpc="defaultMpc"
+                              reliability="AS4Reliability"
+                              security="eDeliveryAS4Policy_BST_PKIP"
+                              receptionAwareness="receptionAwareness"
+                              propertySet="eDeliveryPropertySet"
+                              payloadProfile="MessageProfile"
+                              errorHandling="demoErrorHandling"
+                              compressPayloads="true"/>
+            <legConfiguration name="distributionFODAction"
+                              service="distributionFOD"
+                              action="tc1Action"
+                              defaultMpc="defaultMpc"
+                              reliability="AS4Reliability"
+                              security="eDeliveryAS4Policy_BST_PKIP"
+                              receptionAwareness="receptionAwareness"
+                              propertySet="eDeliveryPropertySet"
+                              payloadProfile="MessageProfile"
+                              errorHandling="demoErrorHandling"
+                              compressPayloads="true"/>
+            <legConfiguration name="pushCase1tc1Action"
+                              service="service1"
+                              action="tc1Action"
+                              defaultMpc="defaultMpc"
+                              reliability="AS4Reliability"
+                              security="eDeliveryAS4Policy_BST_PKIP"
+                              receptionAwareness="receptionAwareness"
+                              propertySet="eDeliveryPropertySet"
+                              payloadProfile="MessageProfile"
+                              errorHandling="demoErrorHandling"
+                              compressPayloads="true"/>
+        </legConfigurations>
+        <process name="tc1Process"
+                 agreement="agreement1"
+                 mep="oneway"
+                 binding="push"
+                 initiatorRole="defaultInitiatorRole"
+                 responderRole="defaultResponderRole">
+            <initiatorParties>
+                <initiatorParty name="medcom-edelivery-dds (funktionscertifikat)"/>
+            </initiatorParties>
+            <legs>
+                <leg name="pushCase1tc1Action"/>
+                <leg name="testServiceCase"/>
+                <leg name="emergenceSDNAction"/>
+                <leg name="emergenceFODAction"/>
+                <leg name="distributionSDNAction"/>
+                <leg name="distributionFODAction"/>
+            </legs>
+        </process>
+        <process name="tc2Process"
+                 agreement="agreement1"
+                 mep="oneway"
+                 binding="push"
+                 initiatorRole="defaultInitiatorRole"
+                 responderRole="defaultResponderRole">
+            <responderParties>
+                <responderParty name="medcom-edelivery-dds (funktionscertifikat)"/>
+            </responderParties>
+            <legs>
+                <leg name="pushCase1tc1Action"/>
+                <leg name="testServiceCase"/>
+                <leg name="emergenceSDNAction"/>
+                <leg name="emergenceFODAction"/>
+                <leg name="distributionSDNAction"/>
+                <leg name="distributionFODAction"/>
+            </legs>
+        </process>
+    </businessProcesses>
+</db:configuration>

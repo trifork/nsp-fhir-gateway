@@ -1,0 +1,184 @@
+<ns1:Emessage xmlns="urn:oio:medcom:municipality:1.0.0" xmlns:ns1="urn:oio:medcom:municipality:1.0.3">
+    <Envelope>
+        <Sent>
+            <Date>2021-06-24</Date>
+            <Time>07:34</Time>
+        </Sent>
+        <Identifier>EPIC394319568</Identifier>
+        <AcknowledgementCode>pluspositivkvitt</AcknowledgementCode>
+    </Envelope>
+    <ns1:ReportOfDischarge>
+        <ns1:Letter>
+            <ns1:Identifier>EPIC394319568</ns1:Identifier>
+            <ns1:VersionCode>XD1834C</ns1:VersionCode>
+            <ns1:StatisticalCode>XDIS18</ns1:StatisticalCode>
+            <ns1:Authorisation>
+                <Date>2021-06-24</Date>
+                <Time>07:34</Time>
+            </ns1:Authorisation>
+            <ns1:TypeCode>XDIS18</ns1:TypeCode>
+            <ns1:EpisodeOfCareIdentifier>000000000006B849272084F1496713C9</ns1:EpisodeOfCareIdentifier>
+        </ns1:Letter>
+        <Sender>
+            <EANIdentifier>5790002515200</EANIdentifier>
+            <Identifier>1301361</Identifier>
+            <IdentifierCode>sygehusafdelingsnummer</IdentifierCode>
+            <OrganisationName>Rigshospitalet</OrganisationName>
+            <DepartmentName>ABC S-C-Akut-MM</DepartmentName>
+            <UnitName>Organkirurgi og Transplantation, s*</UnitName>
+            <StreetName>Inge Lehmanns Vej 5</StreetName>
+            <DistrictName>Kbenhavn </DistrictName>
+            <PostCodeIdentifier>2100</PostCodeIdentifier>
+            <TelephoneSubscriberIdentifier>35452129</TelephoneSubscriberIdentifier>
+            <SignedBy>
+                <Identifier>1301361</Identifier>
+                <IdentifierCode>sygehusafdelingsnummer</IdentifierCode>
+                <PersonGivenName>Louise</PersonGivenName>
+                <PersonSurnameName>Svendsen</PersonSurnameName>
+                <PersonTitle>Sygeplejerske</PersonTitle>
+            </SignedBy>
+            <MedicalSpecialityCode>kir_gastroenterologi</MedicalSpecialityCode>
+            <ContactInformation>
+                <ContactName>Louise Holm Svendsen </ContactName>
+                <TelephoneSubscriberIdentifier>35453122</TelephoneSubscriberIdentifier>
+            </ContactInformation>
+        </Sender>
+        <Receiver>
+            <EANIdentifier>5790002508226</EANIdentifier>
+            <Identifier>270</Identifier>
+            <IdentifierCode>kommunenummer</IdentifierCode>
+            <OrganisationName>Social og Sundhed</OrganisationName>
+            <DepartmentName>Gribskov myndighed, social og sund*</DepartmentName>
+            <StreetName>Birkevang 214 Blidstrup</StreetName>
+            <DistrictName>Gilleleje</DistrictName>
+            <PostCodeIdentifier>3250</PostCodeIdentifier>
+        </Receiver>
+        <Practitioner>
+            <Identifier>010707</Identifier>
+            <IdentifierCode>ydernummer</IdentifierCode>
+            <PersonName>Berit Kjr Lavik</PersonName>
+            <TelephoneSubscriberIdentifier>48765555</TelephoneSubscriberIdentifier>
+        </Practitioner>
+        <Patient>
+            <CivilRegistrationNumber>1111111111</CivilRegistrationNumber>
+            <PersonSurnameName>xxxxxxxx</PersonSurnameName>
+            <PersonGivenName>xxxxxx</PersonGivenName>
+            <StreetName>Vest xxxxxx</StreetName>
+            <SuburbName>xxxxxxx</SuburbName>
+            <DistrictName>Helsinge</DistrictName>
+            <PostCodeIdentifier>3200</PostCodeIdentifier>
+            <Occupation>Skoleelev</Occupation>
+            <TelephoneSubscriberIdentifier>00000000</TelephoneSubscriberIdentifier>
+        </Patient>
+        <ns1:Relatives>
+            <ns1:Relative>
+                <ns1:RelationCode>aegtefaelle</ns1:RelationCode>
+                <PersonSurnameName>xxxxx</PersonSurnameName>
+                <PersonGivenName>xxxxxxx</PersonGivenName>
+                <CodedTelephoneSubscriberIdentifier>
+                    <TelephoneCode>mobil</TelephoneCode>
+                    <TelephoneSubscriberIdentifier>99999999</TelephoneSubscriberIdentifier>
+                </CodedTelephoneSubscriberIdentifier>
+                <ns1:InformedRelative>1</ns1:InformedRelative>
+            </ns1:Relative>
+        </ns1:Relatives>
+        <Admission>
+            <Date>2021-06-17</Date>
+            <Time>09:28</Time>
+        </Admission>
+        <EndOfTreatment>
+            <Date>2021-06-23</Date>
+            <Time>12:00</Time>
+        </EndOfTreatment>
+        <Discharge>
+            <Date>2021-06-23</Date>
+            <Time>12:00</Time>
+        </Discharge>
+        <CauseOfAdmission>Pt. indlgges planmssigt .</CauseOfAdmission>
+        <ns1:NursingProblemAreas>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>A-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Bevgeapparat og aktuel funktionsevne</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Funktion og aktivitet: Ingen bemrkninger <Break />Hjlp til personlig hygiejne: Lidt hjlp <Break />Mobilisering: Frit mobiliseret <Break />Varighed af mobilisering pr. gang: 2,5 timer <Break />Mobilisering, antal gange: 3 <Break />Hjlp til mobilisering: Selvhjulpen <Break />Hjlpemidler til mobilisering:  (dropstativ) <Break />Toiletbesg: Gr selv p toilettet</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>B-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Ernring</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Behov for ernringsscreening?: Ja - indlggelse over 24 timer <Break />Hjde: 192 cm <Break />Vgt: 87,5 kg <Break />BMI (Beregnet): 23,7 <Break />Har patienten haft et vgttab indenfor de sidste 3 mneder?: (!) Ja <Break />Hjeste vgt indenfor de seneste 3 mneder: 92 kg <Break />Procentvise vgttab over de seneste 3 mneder: 5 <Break />Har patienten haft et nedsat kostindtag i den sidste uge?: Nej <Break />Er patienten svrt syg?: Nej</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>C-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Hud og slimhinder</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Hud, slimhinder og hygiejne: Ingen bemrkninger <Break />Hudtilstand/temperatur: Perifer varm, Tr <Break />Mundpleje: Patienten udfrer selv mundpleje</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>E-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Psykosociale forhold</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Reaktion p sygdom: UT er kontaktet af POTA der beskriver at pt. har behov for at have hustru overnattende. Beskrives at have ddsangst. Ved ankost i afdelingen rolig og samarbejder, men naturlig pvirket af hele situationen. Pt. er p POTA informeret af operatr og nsker ny lgesamtale mane. Tilbudt samtale med 1068 vesp., men nsker ikke dette. Hustru nsker derimod samtale med lge vesp, efter aftale med pt. informeres hustru af lge uden pts tilstedevrelse. <Break />Psykisk : Ingen bemrkninger <Break />Psykisk tilstand: Relevant i forhold til situationen, Rolig, Samarbejder, Trist <Break />Psykisk fremtoning: Stille, Tilbagetrukket <Break />Psykiske handlinger: Samtale (lang samtale med JS og prrende )</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>F-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Respiration og cirkulation</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Respiration: Ingen bemrkninger <Break />Ilt (l/min.): 0 <Break />Ilttilskud via: Iltudstyr seponeret <Break />Respirationsmnster: Normal <Break />Respirationslyde: Normal <Break />Respiratoriske handlinger: Lejring, Iltbehandling <Break />Hoste: Ingen <Break />Cirkulation: Relevant <Break />Hudtilstand/temperatur: Perifer varm, Tr <Break />Cirkulatoriske symptomer: Oplevet hjertebanken <Break />Puls, beskrivelse: Uregelmssig</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>H-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Smerter og sanseindtryk</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Smerter: Ingen smerter <Break />Smerteskala: NRS (0-10) <Break />NRS (0-10): 3 <Break />Smertescore (VRS):: Lette smerter <Break />Wong-Baker Faces: En lille smule ondt <Break />Ved hvile/aktivitet/procedurer: I hvile <Break />Placering, omrde: Krop <Break />Smerteplacering (krop): Abdomen <Break />Smerteplacering (ekstr.): Skulder (Samtidig arkivering. Brugeren har muligvis ikke set de tidligere data.) <Break />Smertebeskrivelse: Gnavende (Koliakagtige smerter. % Behov for PN. ) <Break />Smertebehandling: Medicin (se MDA) <Break />Smertefrekvens: Konstant <Break />Forventninger til behandling: Pt. frygter sep. af EPI mane, idet pt. pr-operativt var meget generet af smertegennembrud dagligt. Evt. smertetilsyn inden udskr...</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>I-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Svn og hvile</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Svn/hvile besvr: Ja (nsker umiddelbart ikke sovepille) <Break />Svn/hvile, aktuelt: Sovet, men med afbrydelser (tilbudt sovepille. nsker ikke dette)</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>J-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Viden og udvikling</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Bevidsthed/neurologi: Ingen bemrkninger <Break />Bevidsthedsniveau: Vgen, reagerer normalt eller normal svn <Break />Niveau af orientering: Orienteret i tid, sted, situation og egen data</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+            <ns1:NursingProblemArea>
+                <ns1:Terminology>
+                    <ns1:Code>K-12345</ns1:Code>
+                    <ns1:CodeSystem>medcom</ns1:CodeSystem>
+                    <ns1:CodeDescription>Udskillelse af affaldsstoffer</ns1:CodeDescription>
+                </ns1:Terminology>
+                <ns1:ProblemArea>Sidste affringsdato: 22-06-21 (God effekt af Laxoberal + Lactulose.) <Break />Flatus indenfor de sidste 8 timer: Ja <Break />Gastrointestinal: Ingen bemrkninger <Break />Observation af abdomen: Bld <Break />Obstipation relateret til: Medicinbivirkning (fx opioid, jerntilskud), Sygdom (hmorider, fistler, cancer), Kirurgi <Break />Forebyggelse/behandling af obstipation: Klyx (p lang slange) <Break />GI Symptomer: Diarre (I forbindelse m. mltid - obs. om behov for Kreon ) <Break />Urin: Ingen bemrkninger <Break />Symptomer ved vandladning: Ingen <Break />Urinfarve:  (Let koncentreret) <Break />Urin, udseende: Klar <Break />Yderligere handlinger: Blrescanner</ns1:ProblemArea>
+            </ns1:NursingProblemArea>
+        </ns1:NursingProblemAreas>
+        <ns1:Diagnoses>
+            <ns1:Diagnosis>
+                <ns1:Code>DC250</ns1:Code>
+                <ns1:TypeCode>SKSdiagnosekode</ns1:TypeCode>
+                <ns1:Text>Krft i caput pancreatis</ns1:Text>
+            </ns1:Diagnosis>
+        </ns1:Diagnoses>
+        <ns1:AbilityToFunctionAtDischarge>
+            <ns1:LastModifiedDate>2021-06-24</ns1:LastModifiedDate>
+            <ns1:AbilityToFunctionRelevance>ikke_relevant</ns1:AbilityToFunctionRelevance>
+        </ns1:AbilityToFunctionAtDischarge>
+    </ns1:ReportOfDischarge>
+</ns1:Emessage>

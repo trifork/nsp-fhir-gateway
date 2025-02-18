@@ -1,0 +1,39 @@
+FROM tomcat:8-jdk8
+# FROM digdp-dev-docker.artifactory.nchosting.dk/dockerhub/tomcat:8
+# create folders/volumes for application
+RUN mkdir $CATALINA_HOME/domibus
+RUN mkdir $CATALINA_HOME/domibus/plugins
+RUN mkdir $CATALINA_HOME/domibus/plugins/lib
+RUN mkdir $CATALINA_HOME/domibus/plugins/config
+RUN mkdir $CATALINA_HOME/tmp
+RUN mkdir $CATALINA_HOME/trust
+
+# add domibus folder to classpath
+COPY ./setenv.sh $CATALINA_HOME/bin/setenv.sh
+
+# tomcat-users.xml sets up user accounts for the Tomcat manager GUI
+#COPY ./tomcat-users.xml $CATALINA_HOME/conf/
+
+# make manager app accessible
+#COPY ./manager.xml $CATALINA_HOME/conf/Catalina/localhost/manager.xml
+
+# transfer dependency .jar files (incl. mysql connector)
+COPY ./dependencies/mysql-connector-java-8.0.18.jar $CATALINA_HOME/lib/
+COPY ./dependencies/transactions-hibernate3-5.0.4.jar $CATALINA_HOME/lib/
+COPY ./dependencies/transactions-hibernate4-5.0.4.jar $CATALINA_HOME/lib/
+COPY ./dependencies/transactions-osgi-5.0.4.jar $CATALINA_HOME/lib/
+COPY ./trust/SectigoCA.cer $CATALINA_HOME/trust/
+COPY ./domibus-4.1.6/plugins/config/ws-plugin* $CATALINA_HOME/domibus/plugins/config/
+COPY ./domibus-4.1.6/plugins/lib/domibus-default-ws-plugin-4.1.6.jar $CATALINA_HOME/domibus/plugins/lib/
+
+COPY ./domibus $CATALINA_HOME/domibus/
+COPY ./domibus-4.1.6/domibus-clean.properties $CATALINA_HOME/domibus/domibus.properties
+COPY ./domibus-4.1.6/internal $CATALINA_HOME/domibus/
+
+# deploy war application as ROOT
+COPY ./domibus-4.1.6/domibus.war $CATALINA_HOME/webapps/
+
+RUN keytool -importcert -file $CATALINA_HOME/trust/SectigoCA.cer -keystore /usr/local/openjdk-8/jre/lib/security/cacerts -storepass "changeit" -alias "SectigoCA"
+
+# run tomcat and try to load domibus application
+CMD catalina.sh run

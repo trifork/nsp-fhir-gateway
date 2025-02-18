@@ -1,0 +1,78 @@
+<Emessage xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2005/08/07/">
+    <Envelope>
+        <Sent>
+            <Date>2021-06-24</Date>
+            <Time>10:05</Time>
+        </Sent>
+        <Identifier>EPIC394362123</Identifier>
+        <AcknowledgementCode>pluspositivkvitt</AcknowledgementCode>
+    </Envelope>
+    <BookingConfirmation>
+        <Letter>
+            <Identifier>EPIC394362123</Identifier>
+            <VersionCode>XD1333L</VersionCode>
+            <StatisticalCode>XDIS13</StatisticalCode>
+            <Authorisation>
+                <Date>2021-06-24</Date>
+                <Time>10:05</Time>
+            </Authorisation>
+            <TypeCode>XDIS13</TypeCode>
+            <StatusCode>nytbrev</StatusCode>
+            <EpisodeOfCareIdentifier>045F5F8DBE2E4C578B2105E750148D48</EpisodeOfCareIdentifier>
+        </Letter>
+        <Sender>
+            <EANIdentifier>5790002515200</EANIdentifier>
+            <Identifier>130183P</Identifier>
+            <IdentifierCode>sygehusafdelingsnummer</IdentifierCode>
+            <OrganisationName>Rigshospitalet</OrganisationName>
+            <DepartmentName>jenklinik med. retina amb GLO</DepartmentName>
+            <UnitName>Nethindesygdomme, klinik B1</UnitName>
+            <StreetName>Valdemar Hansens Vej 13</StreetName>
+            <DistrictName>Glostrup</DistrictName>
+            <PostCodeIdentifier>2600</PostCodeIdentifier>
+            <TelephoneSubscriberIdentifier>38634370</TelephoneSubscriberIdentifier>
+            <MedicalSpecialityCode>oftalmologi</MedicalSpecialityCode>
+            <Contact>
+                <Identifier>130183P</Identifier>
+                <IdentifierCode>sygehusafdelingsnummer</IdentifierCode>
+                <OrganisationName>Rigshospitalet</OrganisationName>
+                <DepartmentName>Sekretr</DepartmentName>
+                <UnitName>Dilek Deveci</UnitName>
+            </Contact>
+        </Sender>
+        <Receiver>
+            <EANIdentifier>5790002508226</EANIdentifier>
+            <Identifier>003514</Identifier>
+            <IdentifierCode>ydernummer</IdentifierCode>
+            <OrganisationName>Grndalslgerne</OrganisationName>
+            <DepartmentName>lge</DepartmentName>
+            <StreetName>Godthbsvej 239 A,st</StreetName>
+            <SuburbName>Vanlse</SuburbName>
+            <PostCodeIdentifier>2720</PostCodeIdentifier>
+        </Receiver>
+        <Patient>
+            <CivilRegistrationNumber>1111111111</CivilRegistrationNumber>
+            <PersonSurnameName>Thomsen</PersonSurnameName>
+            <PersonGivenName>Xxxx Xxxxxxx</PersonGivenName>
+            <StreetName>Rnnebrvej </StreetName>
+            <DistrictName>Kbenhavn NV</DistrictName>
+            <PostCodeIdentifier>2400</PostCodeIdentifier>
+            <OccupancyText>XXXXXXXXXXXXXX</OccupancyText>
+            <EpisodeOfCareStatusCode>ambulant</EpisodeOfCareStatusCode>
+        </Patient>
+        <Referral>
+            <Identifier>045F5F8DBE2E4C578B2105E750148D48</Identifier>
+            <Received>
+                <Date>2021-01-29</Date>
+                <Time>10:15</Time>
+            </Received>
+        </Referral>
+        <Confirmation>
+            <Date>2021-08-10</Date>
+            <Time>11:15</Time>
+        </Confirmation>
+        <ClinicalInformation>
+            <Text03>Aftale p NETHINDESYGDOMME, KLINIK B1, Rigshospitalet.</Text03>
+        </ClinicalInformation>
+    </BookingConfirmation>
+</Emessage>

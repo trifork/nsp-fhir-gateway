@@ -1,0 +1,293 @@
+<Emessage xmlns="urn:oio:medcom:municipality:1.0.3">
+    <ns1:Envelope xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+        <ns1:Sent>
+            <ns1:Date>2021-06-24</ns1:Date>
+            <ns1:Time>00:32</ns1:Time>
+        </ns1:Sent>
+        <ns1:Identifier>EPIC394310891</ns1:Identifier>
+        <ns1:AcknowledgementCode>pluspositivkvitt</ns1:AcknowledgementCode>
+    </ns1:Envelope>
+    <ProgressOfCarePlan>
+        <Letter>
+            <Identifier>EPIC394310891</Identifier>
+            <VersionCode>XD2134C</VersionCode>
+            <StatisticalCode>XDIS21</StatisticalCode>
+            <Authorisation>
+                <ns1:Date xmlns:ns1="urn:oio:medcom:municipality:1.0.0">2021-06-24</ns1:Date>
+                <ns1:Time xmlns:ns1="urn:oio:medcom:municipality:1.0.0">00:32</ns1:Time>
+            </Authorisation>
+            <TypeCode>XDIS21</TypeCode>
+            <EpisodeOfCareIdentifier>000000000000E522BE6A484044BBF144</EpisodeOfCareIdentifier>
+        </Letter>
+        <ns1:Sender xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+            <ns1:EANIdentifier>5790002515200</ns1:EANIdentifier>
+            <ns1:Identifier>1301221</ns1:Identifier>
+            <ns1:IdentifierCode>sygehusafdelingsnummer</ns1:IdentifierCode>
+            <ns1:OrganisationName>Rigshospitalet</ns1:OrganisationName>
+            <ns1:DepartmentName>Sengeafsnit 2094</ns1:DepartmentName>
+            <ns1:UnitName>Hjerne- og Nervesygdomme, Sengeafs*</ns1:UnitName>
+            <ns1:StreetName>Inge Lehmanns Vej 8</ns1:StreetName>
+            <ns1:DistrictName>Kbenhavn </ns1:DistrictName>
+            <ns1:PostCodeIdentifier>2100</ns1:PostCodeIdentifier>
+            <ns1:TelephoneSubscriberIdentifier>35457074</ns1:TelephoneSubscriberIdentifier>
+            <ns1:SignedBy>
+                <ns1:Identifier>1301221</ns1:Identifier>
+                <ns1:IdentifierCode>sygehusafdelingsnummer</ns1:IdentifierCode>
+                <ns1:PersonGivenName>Francisca</ns1:PersonGivenName>
+                <ns1:PersonSurnameName>Jensen</ns1:PersonSurnameName>
+                <ns1:PersonTitle>Sygeplejerske</ns1:PersonTitle>
+            </ns1:SignedBy>
+            <ns1:MedicalSpecialityCode>neurologi</ns1:MedicalSpecialityCode>
+            <ns1:ContactInformation>
+                <ns1:ContactName>Francisca  Jensen</ns1:ContactName>
+                <ns1:TelephoneSubscriberIdentifier>35457074</ns1:TelephoneSubscriberIdentifier>
+            </ns1:ContactInformation>
+        </ns1:Sender>
+        <ns1:Receiver xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+            <ns1:EANIdentifier>5790002508226</ns1:EANIdentifier>
+            <ns1:Identifier>101</ns1:Identifier>
+            <ns1:IdentifierCode>kommunenummer</ns1:IdentifierCode>
+            <ns1:OrganisationName>Kbenhavns Kommune</ns1:OrganisationName>
+            <ns1:DepartmentName>Kommunens kommunikation, Kbenhavn</ns1:DepartmentName>
+            <ns1:UnitName>Socialforvaltningens hjemmepleje</ns1:UnitName>
+            <ns1:StreetName>Bernstorffsgade 21</ns1:StreetName>
+            <ns1:DistrictName>Kbenhavn V</ns1:DistrictName>
+            <ns1:PostCodeIdentifier>1577</ns1:PostCodeIdentifier>
+        </ns1:Receiver>
+        <ns1:Practitioner xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+            <ns1:Identifier>002895</ns1:Identifier>
+            <ns1:IdentifierCode>ydernummer</ns1:IdentifierCode>
+            <ns1:PersonName>Lgeklinikken Lygtemagerstien</ns1:PersonName>
+            <ns1:TelephoneSubscriberIdentifier>32555502</ns1:TelephoneSubscriberIdentifier>
+        </ns1:Practitioner>
+        <ns1:Patient xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+            <ns1:CivilRegistrationNumber>1111111111</ns1:CivilRegistrationNumber>
+            <ns1:PersonSurnameName>Jxxxxxx</ns1:PersonSurnameName>
+            <ns1:PersonGivenName>Jxxxxxx</ns1:PersonGivenName>
+            <ns1:StreetName>Hans Hedtofts xxxxxxxxxx</ns1:StreetName>
+            <ns1:DistrictName>Kbenhavn S</ns1:DistrictName>
+            <ns1:PostCodeIdentifier>2300</ns1:PostCodeIdentifier>
+            <ns1:Occupation>Sxx pxxxxxxg</ns1:Occupation>
+            <ns1:TelephoneSubscriberIdentifier>999999999</ns1:TelephoneSubscriberIdentifier>
+        </ns1:Patient>
+        <Relatives>
+            <Relative>
+                <RelationCode>aegtefaelle</RelationCode>
+                <ns1:PersonSurnameName xmlns:ns1="urn:oio:medcom:municipality:1.0.0">Jxxxxx</ns1:PersonSurnameName>
+                <ns1:PersonGivenName xmlns:ns1="urn:oio:medcom:municipality:1.0.0">Lxxxx</ns1:PersonGivenName>
+                <ns1:CodedTelephoneSubscriberIdentifier xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+                    <ns1:TelephoneCode>mobil</ns1:TelephoneCode>
+                    <ns1:TelephoneSubscriberIdentifier>999999</ns1:TelephoneSubscriberIdentifier>
+                </ns1:CodedTelephoneSubscriberIdentifier>
+                <InformedRelative>1</InformedRelative>
+            </Relative>
+            <Comment>xxxxxxxxxxxxxxxxxxxx xxxxxxxxxxxxxx</Comment>
+        </Relatives>
+        <ns1:Admission xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+            <ns1:Date>2021-05-27</ns1:Date>
+            <ns1:Time>20:56</ns1:Time>
+        </ns1:Admission>
+        <ep2:ExpectedEndOfTreatment xmlns:ep2="urn:oio:medcom:municipality:1.0.2">
+            <ep2:Date>2021-06-29</ep2:Date>
+            <ep2:Time>10:00</ep2:Time>
+        </ep2:ExpectedEndOfTreatment>
+        <ns1:AgreedDischarge xmlns:ns1="urn:oio:medcom:municipality:1.0.0">
+            <ns1:Date>2021-06-29</ns1:Date>
+            <ns1:Time>13:00</ns1:Time>
+        </ns1:AgreedDischarge>
+        <ep2:AgreedDischargeComment xmlns:ep2="urn:oio:medcom:municipality:1.0.2">Udskrivnings dato og tidpunkt er fiktiv. Obs.</ep2:AgreedDischargeComment>
+        <ns1:CauseOfAdmission xmlns:ns1="urn:oio:medcom:municipality:1.0.0">Meningeal carcinose - dissemineret malign sygdom.</ns1:CauseOfAdmission>
+        <ns1:ExpectedCourseOfAdmission xmlns:ns1="urn:oio:medcom:municipality:1.0.0">MTS/VP shunt behandlet hydrocefalus pba malignt gliom som i hht biopsi fra spinal udsd er grad IV  = glioblastom.</ns1:ExpectedCourseOfAdmission>
+        <ns1:RiskOfContagion xmlns:ns1="urn:oio:medcom:municipality:1.0.0">Ingen kendte</ns1:RiskOfContagion>
+        <DietFirst24Hours>
+            <LunchBox>0</LunchBox>
+            <ShoppingAtDischarge>0</ShoppingAtDischarge>
+        </DietFirst24Hours>
+        <FurtherCoordination>
+            <HomeChanges>
+                <Comment>Ja</Comment>
+            </HomeChanges>
+            <ScheduleAuxilaries>
+                <Comment>Ja</Comment>
+            </ScheduleAuxilaries>
+            <RehabilitationNeeds>
+                <Comment>Ja</Comment>
+            </RehabilitationNeeds>
+            <HomeCareNeeds>
+                <Comment>Ja mhp medicin adminstration og parenteral ernring.</Comment>
+            </HomeCareNeeds>
+            <MedicineAdministrationHelp>
+                <Comment>Ja</Comment>
+            </MedicineAdministrationHelp>
+            <MedicineConsumptionHelp>
+                <Comment>Ja</Comment>
+            </MedicineConsumptionHelp>
+            <DischargeConference>
+                <DischargeDateCode>forslag</DischargeDateCode>
+                <Date>2021-06-28</Date>
+                <Time>10:00</Time>
+                <VideoConference>0</VideoConference>
+                <Comment>Det er vigtig for prrende at man holder tvrfaglig konference for at afklare pt,s palliativ frlb enten i hjemmet eller p hospice.</Comment>
+            </DischargeConference>
+            <OtherMunicipalWorkNeeded>
+                <Comment>Ja, Der anmodes om visitions konference den dddd. da overlge har mulighed for at deltage</Comment>
+            </OtherMunicipalWorkNeeded>
+        </FurtherCoordination>
+        <ExpectedAbilityToFunctionAtDischarge>
+            <LastModifiedDate>2021-06-24</LastModifiedDate>
+            <AbilityToFunctionElements>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA510</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>Vaske sig</CodeDescription>
+                    </Terminology>
+                    <Score>svaere</Score>
+                    <Comment>Kan vaske sig forven</Comment>
+                </AbilityToFunctionElement>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA540</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>Af- og pkldning</CodeDescription>
+                    </Terminology>
+                    <Score>svaere</Score>
+                </AbilityToFunctionElement>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA530</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>G p toilet</CodeDescription>
+                    </Terminology>
+                    <Score>totale</Score>
+                    <Comment>Bliver liftet til og fra krestole</Comment>
+                </AbilityToFunctionElement>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA420</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>Forflytte sig</CodeDescription>
+                    </Terminology>
+                    <Score>totale</Score>
+                    <Comment>Paralyse u.e</Comment>
+                </AbilityToFunctionElement>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA460</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>Frden i forskellige omgivelser</CodeDescription>
+                    </Terminology>
+                    <Score>totale</Score>
+                    <Comment>Sidder i krestole</Comment>
+                </AbilityToFunctionElement>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA560</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>Drikke</CodeDescription>
+                    </Terminology>
+                    <Score>svaere</Score>
+                </AbilityToFunctionElement>
+                <AbilityToFunctionElement>
+                    <Terminology>
+                        <Code>FA550</Code>
+                        <CodeSystem>icf</CodeSystem>
+                        <CodeDescription>Spise</CodeDescription>
+                    </Terminology>
+                    <Score>totale</Score>
+                    <Comment>Er prget af kvalme, derfor madlede</Comment>
+                </AbilityToFunctionElement>
+            </AbilityToFunctionElements>
+        </ExpectedAbilityToFunctionAtDischarge>
+        <NursingProblemAreas>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>A-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Bevgeapparat og aktuel funktionsevne</CodeDescription>
+                </Terminology>
+                <ProblemArea>Funktion og aktivitet: Relevant <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hjlp til personlig hygiejne: Maximal hjlp <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Lejring: Hjlp til vending <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Mobilisering: Krestol, mobiliseret til, Bkkenstol, mobiliseret til, Med 2 personer <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Varighed af mobilisering pr. gang: 2,5 timer <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hjlp til mobilisering: Lift ndvendig <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hjlpemidler til mobilisering: Krestol <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Aktivitetsniveau: M frit mobiliseres <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Andre hjlpemidler: Bkkenstol <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Toiletbesg: Bruger ble, Bruger bkkenstol <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Faldrisiko: Patienten er faldtruet</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>B-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Ernring</CodeDescription>
+                </Terminology>
+                <ProblemArea>Behov for ernringsscreening?: Ja - indlggelse over 24 timer <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hjde: 185 cm <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Vgt: 87 kg <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />BMI (Beregnet): 25,4 <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Har patienten haft et vgttab indenfor de sidste 3 mneder?: (!) Ja <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Har patienten haft et nedsat kostindtag i den sidste uge?: (!) Ja <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Er patienten svrt syg?: Nej</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>C-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Hud og slimhinder</CodeDescription>
+                </Terminology>
+                <ProblemArea>Hud, slimhinder og hygiejne: Ingen bemrkninger <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hud: Normal udseende og intakt hud <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hygiejne: Brusebad <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Mandlige genitalier: Intakt <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Mundstatus: Normal <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Mundpleje: Tandbrstning <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Tryksr risiko: Meget hj risiko for at udvikle tryksr</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>D-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Kommunikation</CodeDescription>
+                </Terminology>
+                <ProblemArea>Barriere for kommunikation og vejledning : Ingen barrierer <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Kommunikation, fritekst: xxxxx.</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>E-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Psykosociale forhold</CodeDescription>
+                </Terminology>
+                <ProblemArea>Sygdomsindsigt: Relevant sygdomsindsigt <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Helbredsopfattelse: Relevant sygdomsflelse <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Psykisk : Ingen bemrkninger <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Bolig: Lejlighed <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Bor sammen med: gteflle/partner</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>F-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Respiration og cirkulation</CodeDescription>
+                </Terminology>
+                <ProblemArea>Respiration: Ingen bemrkninger <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Ilt (l/min.): 0 <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Ilttilskud via: Andet (kommentar) <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Respirationsmnster: Normal <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Respirationslyde: Normal <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Respiratoriske handlinger: Lejring, Iltbehandling <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hoste: Ingen <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Cirkulation: Ingen bemrkninger</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>G-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Seksualitet</CodeDescription>
+                </Terminology>
+                <ProblemArea>Seksualitet: Ikke aktuel for indlggelsen</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>H-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Smerter og sanseindtryk</CodeDescription>
+                </Terminology>
+                <ProblemArea>Smerter: Akutte smerter <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Smerteskala: VAS (mm) <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />NRS (0-10): 6 <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Smertescore (VRS):: Middelstrke smerter <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Ved hvile/aktivitet/procedurer: I hvile <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Placering, omrde: Hoved <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Smerteplacering (hoved): Pande <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Smerteplacering (krop): Ryg <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Smertebeskrivelse: Trykkende <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Lindrende faktorer:  (Paracetamol) <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Smertebehandling: Medicin (se MDA) <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Syn og jne : Ingen bemrkninger <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Hrelse og rer: Ingen bemrkninger</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>I-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Svn og hvile</CodeDescription>
+                </Terminology>
+                <ProblemArea>Svn/hvile besvr: Nej <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Svn/hvile, aktuelt: Sover ved tilsyn</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>J-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Viden og udvikling</CodeDescription>
+                </Terminology>
+                <ProblemArea>Bevidsthed/neurologi: Ingen bemrkninger <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Bevidsthedsniveau: Vgen, reagerer normalt eller normal svn <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Kognitivt: Relevant dmmekraft <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Tale: Normal <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Helbredsopfattelse: Relevant sygdomsflelse <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Sygdomsindsigt: Relevant sygdomsindsigt</ProblemArea>
+            </NursingProblemArea>
+            <NursingProblemArea>
+                <Terminology>
+                    <Code>K-12345</Code>
+                    <CodeSystem>medcom</CodeSystem>
+                    <CodeDescription>Udskillelse af affaldsstoffer</CodeDescription>
+                </Terminology>
+                <ProblemArea>Sidste affringsdato: 20-06-21 <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Habituelt affringsmnster: Hver anden dag (pt. oplyst) <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Flatus indenfor de sidste 8 timer: Ved ikke <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Gastrointestinal: Relevant <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Observation af abdomen: Bld <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Obstipation/mistanke om obstipation: Ja <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Obstipation relateret til: Medicinbivirkning (fx opioid, jerntilskud) <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Forebyggelse/behandling af obstipation: Laksantia (se MDA/FMK), Klyx <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Problemer ved affring: Besvret <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />GI Symptomer: Kvalme <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Generet af flatulens?: Nej <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Natlig affring: Nej <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Urin: Relevant <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Urinmngde: Mellem <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Urinfarve: Porterfarvet <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Urin, udseende: Klar <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Urinlugt: Sdlig <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Yderligere handlinger: Blrescanner <ns1:Break xmlns:ns1="urn:oio:medcom:municipality:1.0.0" />Kateter: Ja, KAD</ProblemArea>
+            </NursingProblemArea>
+        </NursingProblemAreas>
+    </ProgressOfCarePlan>
+</Emessage>

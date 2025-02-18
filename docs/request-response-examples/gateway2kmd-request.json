@@ -1,0 +1,16 @@
+{
+  "ApplId": "MedCom Meddelelseshotel",
+  "EquipmentId": "NSP MedCom Gateway",
+  "Uuid": "d2ad5156-b363-49a8-9d0d-0810c6bd2f2b",
+  "Ts": "2021-03-18T03:28:38.890",
+  "Partner": "Nsp",
+  "Direction": "IB",
+  "RemotePartner": "remote",
+  "Sender": "ap1",
+  "Receiver": "ap2",
+  "Icref": "672fceab-6acd-421e-a2b8-0c8d5f58e2b9",
+  "Brvstat": "XREF01",
+  "Orgicref": "<none>",
+  "MessageRef": "672fceab-6acd-421e-a2b8-0c8d5f58e2b9",
+  "MessageType": "urn:dk:healthcare:medcom:oioxml:schema:xsd:HospitalReferral"
+}

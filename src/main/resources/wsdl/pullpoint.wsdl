@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    The MIT License
+    
+    Original work sponsored and donated by National Board of e-Health (NSI), Denmark 
+    (http://www.nsi.dk)
+    
+    Copyright (C) 2012 National Board of e-Health (NSI), Denmark (http://www.nsi.dk)
+    
+    Permission is hereby granted, free of charge, to any person obtaining a copy of
+    this software and associated documentation files (the "Software"), to deal in
+    the Software without restriction, including without limitation the rights to
+    use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+    of the Software, and to permit persons to whom the Software is furnished to do
+    so, subject to the following conditions:
+    
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+    
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+-->
+<wsdl:definitions name="CXF-WS-PullPoint"
+								  xmlns="http://schemas.xmlsoap.org/wsdl/"
+								  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+								  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+								  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+								  xmlns:wsn-b="http://docs.oasis-open.org/wsn/b-2"
+								  xmlns:wsrf-r="http://docs.oasis-open.org/wsrf/r-2"
+								  xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+								  xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+								  xmlns:tns="http://docs.oasis-open.org/wsn/bw-2"
+								  targetNamespace="http://docs.oasis-open.org/wsn/bw-2">
+<!-- ===================== Types Definitions ====================== -->
+
+  <wsdl:types>
+  
+    <xsd:schema>
+      <xsd:import namespace="http://docs.oasis-open.org/wsn/b-2" 
+        schemaLocation="schemas/nas/b-2.xsd"/>
+      <xsd:import namespace="http://docs.oasis-open.org/wsrf/r-2" 
+        schemaLocation="schemas/nas/r-2.xsd"/>
+      <xsd:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+        schemaLocation="schemas/dgws/wsse.xsd"/>
+      <xsd:import namespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+        schemaLocation="schemas/dgws/medcom.xsd"/>
+      <xsd:import namespace="http://nsi.dk/advis/v10"
+        schemaLocation="schemas/nas/ID_MCP-v14.xsd" />
+    </xsd:schema>
+
+  </wsdl:types>
+  
+<!-- ===================== Messages Definitions ====================== -->  
+  
+  <!-- NAS security header includes -->
+  <wsdl:message name="SecurityHeader">
+    <wsdl:part name="security_header" element="wsse:Security"/>
+  </wsdl:message>
+
+  <wsdl:message name="MedcomHeader">
+    <wsdl:part name="medcom_header" element="medcom:Header"/>
+  </wsdl:message> 
+  
+  <message name="DGWSFault">
+     <part name="fault" element="medcom:FaultCode" />
+   </message>
+  
+  
+<!-- ========== PullPoint::GetMessages =========== 
+  GetMessages(MaximumNumber)
+  returns: NotificationMessage list
+-->
+   <wsdl:message name="GetMessagesRequest">
+      <wsdl:part name="GetMessagesRequest" element="wsn-b:GetMessages"/>
+   </wsdl:message>
+
+   <wsdl:message name="GetMessagesResponse">
+      <wsdl:part name="GetMessagesResponse" 
+            element="wsn-b:GetMessagesResponse"/>
+   </wsdl:message>
+
+   <wsdl:message name="UnableToGetMessagesFault">
+      <wsdl:part name="UnableToGetMessagesFault"
+            element="wsn-b:UnableToGetMessagesFault"/>
+   </wsdl:message> 
+
+
+<!-- ========== PullPoint::DestroyPullPoint =========== 
+  DestroyPullPoint()
+  returns: void
+-->
+   <wsdl:message name="DestroyPullPointRequest">
+      <wsdl:part name="DestroyPullPointRequest" 
+            element="wsn-b:DestroyPullPoint"/>
+   </wsdl:message>
+
+   <wsdl:message name="DestroyPullPointResponse">
+      <wsdl:part name="DestroyPullPointResponse" 
+            element="wsn-b:DestroyPullPointResponse"/>
+   </wsdl:message>
+
+   <wsdl:message name="UnableToDestroyPullPointFault">
+      <wsdl:part name="UnableToDestroyPullPointFault"
+            element="wsn-b:UnableToDestroyPullPointFault"/>
+   </wsdl:message> 
+
+ 
+<!-- ================ NotificationConsumer::Notify ================ 
+  Notify(
+    NotificationMessage
+      (SubscriptionReference, TopicExpression, ProducerReference,
+       Message)*
+  returns: NotifyResponse
+-->
+  <wsdl:message name="Notify">
+    <wsdl:part name="Notify" element="wsn-b:Notify"/>
+  </wsdl:message>
+  <wsdl:message name="NotifyResponse">
+	<wsdl:part name="NotifyResponse" element="wsn-b:NotifyResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="NotifyFailedFault">
+    <wsdl:part name="NotifyFailedFault" element="wsn-b:NotifyFailedFault" />
+  </wsdl:message>
+   
+
+<!-- ================= WS-Resource faults ========================= -->
+  <wsdl:message name="ResourceUnknownFault">
+     <part name="ResourceUnknownFault"
+           element="wsrf-r:ResourceUnknownFault" />
+  </wsdl:message> 
+
+  <wsdl:message name="ResourceUnavailableFault">
+     <part name="ResourceUnavailableFault"
+           element="wsrf-r:ResourceUnavailableFault" />
+  </wsdl:message> 
+
+
+<!-- ========== PullPoint PortType Definition ===================== -->
+   <wsdl:portType name="PullPoint">
+      <wsdl:operation name="GetMessages">
+         <wsdl:input  name="GetMessagesRequest" 
+                      message="tns:GetMessagesRequest" />
+         <wsdl:output name="GetMessagesResponse" 
+                      message="tns:GetMessagesResponse" />
+         <wsdl:fault  name="ResourceUnknownFault" 
+                      message="tns:ResourceUnknownFault" /> 
+         <wsdl:fault  name="UnableToGetMessagesFault" 
+                      message="tns:UnableToGetMessagesFault" />
+         <wsdl:fault  name="DGWSFault" 
+                      message="tns:DGWSFault" />
+      </wsdl:operation>
+
+      <wsdl:operation name="DestroyPullPoint">
+         <wsdl:input  name="DestroyPullPointRequest" 
+                      message="tns:DestroyPullPointRequest" />
+         <wsdl:output name="DestroyPullPointResponse" 
+                      message="tns:DestroyPullPointResponse" />
+         <wsdl:fault  name="ResourceUnknownFault" 
+                      message="tns:ResourceUnknownFault" /> 
+         <wsdl:fault  name="UnableToDestroyPullPointFault" 
+                      message="tns:UnableToDestroyPullPointFault" />
+         <wsdl:fault  name="DGWSFault" 
+                      message="tns:DGWSFault" />
+      </wsdl:operation>
+
+      <wsdl:operation name="Notify">
+         <wsdl:input  message="tns:Notify"/>
+         <wsdl:output message="tns:NotifyResponse"/>
+         <wsdl:fault  name="NotifyFailedFault" 
+                      message="tns:NotifyFailedFault" />
+         <wsdl:fault  name="ResourceUnknownFault" 
+                      message="tns:ResourceUnknownFault" /> 
+      </wsdl:operation>
+   </wsdl:portType>
+
+<!-- ===================== Binding ====================== -->
+
+  <wsdl:binding name="PullPointSoap" type="tns:PullPoint">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction = "http://docs.oasis-open.org/wsn/bw-2/PullPoint/GetMessagesRequest" />
+      <wsdl:input name="GetMessagesRequest">
+        <soap:header message="tns:SecurityHeader"
+          part="security_header" use="literal" />
+        <soap:header message="tns:MedcomHeader"
+          part="medcom_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="GetMessagesResponse">
+        <soap:header message="tns:MedcomHeader"
+          part="medcom_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResourceUnknownFault">
+        <soap:fault use="literal" name="ResourceUnknownFault" />
+      </wsdl:fault>
+      <wsdl:fault name="UnableToGetMessagesFault">
+        <soap:fault use="literal" name="UnableToGetMessagesFault" />
+      </wsdl:fault>
+      <wsdl:fault name="DGWSFault">
+        <soap:fault use="literal" name="DGWSFault" />
+      </wsdl:fault>
+    </wsdl:operation>
+    
+    <wsdl:operation name="DestroyPullPoint">
+      <soap:operation soapAction = "http://docs.oasis-open.org/wsn/bw-2/PullPoint/DestroyPullPointRequest" />
+      <wsdl:input name="DestroyPullPointRequest">
+       <soap:header message="tns:SecurityHeader"
+          part="security_header" use="literal" />
+        <soap:header message="tns:MedcomHeader"
+          part="medcom_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="DestroyPullPointResponse">
+         <soap:header message="tns:MedcomHeader"
+          part="medcom_header" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResourceUnknownFault">
+        <soap:fault use="literal" name="ResourceUnknownFault" />
+      </wsdl:fault>
+      <wsdl:fault name="UnableToDestroyPullPointFault">
+        <soap:fault use="literal"
+          name="UnableToDestroyPullPointFault" />
+      </wsdl:fault>
+      <wsdl:fault name="DGWSFault">
+        <soap:fault use="literal" name="DGWSFault" />
+      </wsdl:fault>
+    </wsdl:operation>
+    
+    <wsdl:operation name="Notify">
+      <soap:operation soapAction = "http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ResourceUnknownFault">
+        <soap:fault use="literal" name="ResourceUnknownFault" />
+      </wsdl:fault>
+      <wsdl:fault name="NotifyFailedFault">
+        <soap:fault use="literal" name="NotifyFailedFault" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+<!-- ===================== Service ====================== -->  
+  <wsdl:service name="PullPointService">
+    <wsdl:port name="Soap" binding="tns:PullPointSoap">
+      <soap:address
+        location="http://cxf.apache.org/wsnotification" />
+    </wsdl:port>
+  </wsdl:service>
+
+</wsdl:definitions>

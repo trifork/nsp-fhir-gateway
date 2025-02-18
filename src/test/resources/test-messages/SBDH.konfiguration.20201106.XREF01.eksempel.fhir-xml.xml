@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sh:StandardBusinessDocument xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader">
+	<StandardBusinessDocumentHeader xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader file:/C:/Users/ovi/OneDrive%20-%20MedCom/Standarder/Modernisering/eDelivery/SBDH/SBDH20040506-02/StandardBusinessDocumentHeader.xsd">
+		<HeaderVersion>1.0</HeaderVersion>
+		<Sender>
+			<Identifier Authority="iso6523-actorid-upis">0088:5790000121526</Identifier>
+		</Sender>
+		<Receiver>
+			<Identifier Authority="iso6523-actorid-upis">0088:5790000201389</Identifier>
+		</Receiver>
+		<DocumentIdentification>
+			<Standard>urn:dk:healthcare:specification:oioxml:schema:xsd:HospitalReferral</Standard>
+			<TypeVersion>urn:dk:healthcare:specification:oioxml:schema:xsd:HospitalReferral##urn:www.medcom.dk:messaging:HospitalReferral/Letter/XREF01::XH0130R</TypeVersion>
+			<!-- InstanceIdentifier UUID -->
+			<InstanceIdentifier>9a6ff822-08de-5a6f-9670-9fa4b9d2f0dc</InstanceIdentifier>
+			<Type>urn:dk:healthcare:specification:oioxml:schema:xsd:HospitalReferral##urn:www.medcom.dk:messaging:HospitalReferral/Letter/TypeCode/XREF01</Type>
+			<MultipleType>false</MultipleType>
+			<CreationDateAndTime>2020-11-06T16-19-00+01.00</CreationDateAndTime>
+		</DocumentIdentification>
+		<BusinessScope>
+			<!-- DOCUMENTID -->
+			<Scope>
+				<Type>DOCUMENTID</Type>
+					<InstanceIdentifier>urn:dk:healthcare:specification:oioxml:schema:xsd:HospitalReferral##urn:www.medcom.dk:messaging:HospitalReferral/Letter/TypeCode/XREF01::HospitalReferral/Letter/VersionCode/XH0130R</InstanceIdentifier>
+					<Identifier>medcom-docid-qns</Identifier>
+			</Scope>
+			<!-- PROCESSID -->
+			<Scope>
+				<Type>PROCESSID</Type>
+				<InstanceIdentifier>urn:www.digst.dk:profile:sdn-emergence</InstanceIdentifier>
+				<Identifier>dk-messaging-procid</Identifier>
+			</Scope>
+		</BusinessScope>
+	</StandardBusinessDocumentHeader>
+	<sh:BinaryContent xmlns="http://peppol.eu/xsd/ticc/envelope/1.0" mimeType="text/XML" encoding="UTF-8">
+		PEJ1bmRsZSB4bWxucz0iaHR0cDovL2hsNy5vcmcvZmhpciI+PHR5cGUgdmFsdWU9Im1lc3NhZ2UiLz48ZW50cnk+PHJlc291cmNlPjxDb21tdW5pY2F0aW9uIHhtbG5zPSJodHRwOi8vaGw3Lm9yZy9maGlyIj48cmVjaXBpZW50PjxyZWZlcmVuY2UgdmFsdWU9InRoZVJlY2lwaWVudCIvPjwvcmVjaXBpZW50PjxzZW5kZXI+PHJlZmVyZW5jZSB2YWx1ZT0idGhlU2VuZGVyIi8+PC9zZW5kZXI+PHBheWxvYWQ+PGNvbnRlbnRTdHJpbmcgdmFsdWU9InRoZVBheWxvYWQiLz48L3BheWxvYWQ+PC9Db21tdW5pY2F0aW9uPjwvcmVzb3VyY2U+PC9lbnRyeT48ZW50cnk+PHJlc291cmNlPjxPcmdhbml6YXRpb24geG1sbnM9Imh0dHA6Ly9obDcub3JnL2ZoaXIiPjxhbGlhcyB2YWx1ZT0idGhlT3JnYW5pemF0aW9uIi8+PGVuZHBvaW50PjxyZWZlcmVuY2UgdmFsdWU9InRoZUVuZHBvaW50Ii8+PC9lbmRwb2ludD48L09yZ2FuaXphdGlvbj48L3Jlc291cmNlPjwvZW50cnk+PC9CdW5kbGU+
+	</sh:BinaryContent>
+</sh:StandardBusinessDocument>

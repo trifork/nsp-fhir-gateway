@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StandardBusinessDocument xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://docs.oasis-open.org/ebxml-bp/ebbp-signals-2.0" xmlns:ns4="http://www.w3.org/1999/xlink" xmlns:ns5="http://peppol.eu/xsd/ticc/envelope/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader MedComStandardBusinessDocumentHeader_20210217.xsd">
+  <StandardBusinessDocumentHeader>
+    <HeaderVersion>2022-01-21</HeaderVersion>
+    <Sender>
+      <Identifier Authority="iso6523-actorid-upis">0088:5790000201389</Identifier>
+    </Sender>
+    <Receiver>
+      <Identifier Authority="iso6523-actorid-upis">0088:5790000121526</Identifier>
+    </Receiver>
+    <DocumentIdentification>
+      <Standard>ebbp-signals</Standard>
+      <TypeVersion>ebbp-signals-2.0</TypeVersion>
+      <InstanceIdentifier>84672dee-7c67-49aa-aade-734cfd3998ed</InstanceIdentifier>
+      <Type>ReceiptAcknowledgement</Type>
+      <CreationDateAndTime>2022-02-02T13:19:36.785+01:00</CreationDateAndTime>
+    </DocumentIdentification>
+    <BusinessScope>
+      <Scope>
+        <Type></Type>
+        <InstanceIdentifier></InstanceIdentifier>
+        <CorrelationInformation>
+          <RequestingDocumentCreationDateTime>2020-11-06T16:19:00.000+01:00</RequestingDocumentCreationDateTime>
+          <RequestingDocumentInstanceIdentifier>84672dee-7c67-49aa-aade-734cfd3998ed</RequestingDocumentInstanceIdentifier>
+          <ExpectedResponseDateTime>2020-11-06T16:29:00.000+01:00</ExpectedResponseDateTime>
+        </CorrelationInformation>
+        <BusinessService>
+          <BusinessServiceName>SBDH_MedCom_ReceiptAcknowledge_Request</BusinessServiceName>
+          <ServiceTransaction TypeOfServiceTransaction="RequestingServiceTransaction" IsNonRepudiationRequired="false" IsAuthenticationRequired="false" IsNonRepudiationOfReceiptRequired="false" IsIntelligibleCheckRequired="false" IsApplicationErrorResponseRequested="false" TimeToAcknowledgeReceipt="600000" TimeToAcknowledgeAcceptance="0" TimeToPerform="0" Recurrence="0"/>
+        </BusinessService>
+      </Scope>
+      <Scope>
+        <Type>OriginalMessageIdentifier</Type>
+        <InstanceIdentifier>84672dee-7c67-49aa-aade-734cfd3998ed</InstanceIdentifier>
+        <Identifier>dk-messaging-docid</Identifier>
+      </Scope>
+      <Scope>
+        <Type>FromPartyInfo</Type>
+        <InstanceIdentifier>1170101</InstanceIdentifier>
+        <Identifier>Sorkode</Identifier>
+      </Scope>
+      <Scope>
+        <Type>MedCom_SBDH_ReceiptAcknowledgement</Type>
+        <InstanceIdentifier>Response</InstanceIdentifier>
+        <Identifier>dk-medcom-messaging</Identifier>
+      </Scope>
+      <Scope>
+        <Type>ToPartyInfo</Type>
+        <InstanceIdentifier>1170102</InstanceIdentifier>
+        <Identifier>Sorkode</Identifier>
+      </Scope>
+      <Scope>
+        <Type>DOCUMENTID</Type>
+        <InstanceIdentifier>urn:dk:healthcare:medcom:messaging:ebxml:schema:xsd:SBDHReceiptAcknowledgement</InstanceIdentifier>
+        <Identifier>dk-messaging-docid</Identifier>
+      </Scope>
+    </BusinessScope>
+  </StandardBusinessDocumentHeader>
+  <BinaryContent mimeType="application/xml" encoding="UTF-8">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8UmVjZWlwdEFja25vd2xlZGdlbWVudCB4bWxucz0iaHR0cDovL2RvY3Mub2FzaXMtb3Blbi5vcmcvZWJ4bWwtYnAvZWJicC1zaWduYWxzLTIuMCIgeG1sbnM6bnMyPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWxuczpuczM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiIHhtbG5zOm5zND0iaHR0cDovL3d3dy51bmVjZS5vcmcvY2VmYWN0L25hbWVzcGFjZXMvU3RhbmRhcmRCdXNpbmVzc0RvY3VtZW50SGVhZGVyIiB4bWxuczpuczU9Imh0dHA6Ly9wZXBwb2wuZXUveHNkL3RpY2MvZW52ZWxvcGUvMS4wIj4KICAgIDxPcmlnaW5hbE1lc3NhZ2VJZGVudGlmaWVyPjg0NjcyZGVlLTdjNjctNDlhYS1hYWRlLTczNGNmZDM5OThlZDwvT3JpZ2luYWxNZXNzYWdlSWRlbnRpZmllcj4KICAgIDxPcmlnaW5hbERvY3VtZW50SWRlbnRpZmllcj51cm46ZGs6aGVhbHRoY2FyZTptZWRjb206b2lveG1sOnNjaGVtYTp4c2Q6SG9zcGl0YWxSZWZlcnJhbCMjdXJuOnd3dy5tZWRjb20uZGs6bWVzc2FnaW5nOkhvc3BpdGFsUmVmZXJyYWwvTGV0dGVyL1R5cGVDb2RlL1hSRUYwMTo6SG9zcGl0YWxSZWZlcnJhbC9MZXR0ZXIvVmVyc2lvbkNvZGUvWEgwMTMwUjwvT3JpZ2luYWxEb2N1bWVudElkZW50aWZpZXI+CiAgICA8T3JpZ2luYWxNZXNzYWdlRGF0ZVRpbWU+MjAyMC0xMS0wNlQxNjoxOTowMC4wMDArMDE6MDA8L09yaWdpbmFsTWVzc2FnZURhdGVUaW1lPgogICAgPFRoaXNNZXNzYWdlRGF0ZVRpbWU+MjAyMi0wMi0wMlQxMzoxOTozNi43ODUrMDE6MDA8L1RoaXNNZXNzYWdlRGF0ZVRpbWU+CiAgICA8RnJvbVBhcnR5SW5mbyB0eXBlPSJTb3Jrb2RlIj4xMTcwMTAxPC9Gcm9tUGFydHlJbmZvPgogICAgPFRvUGFydHlJbmZvIHR5cGU9IlNvcmtvZGUiPjExNzAxMDI8L1RvUGFydHlJbmZvPgo8L1JlY2VpcHRBY2tub3dsZWRnZW1lbnQ+Cg==</BinaryContent>
+</StandardBusinessDocument>

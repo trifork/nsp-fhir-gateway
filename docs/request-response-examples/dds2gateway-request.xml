@@ -1,0 +1,96 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+    <soap:Header>
+        <Action xmlns="http://www.w3.org/2005/08/addressing">urn:ihe:iti:2007:RetrieveDocumentSet</Action>
+        <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:18a22b22-9b85-43b7-9647-62215dc6a147
+        </MessageID>
+        <To xmlns="http://www.w3.org/2005/08/addressing">http://medcom-gateway:8080/ws</To>
+        <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+            <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+        </ReplyTo>
+        <ns12:Header xmlns:ns13="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                     xmlns:ns12="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                     xmlns:ns11="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                     xmlns:ns10="http://www.w3.org/2000/09/xmldsig#" xmlns:ns9="urn:oasis:names:tc:SAML:2.0:assertion"
+                     xmlns:ns8="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                     xmlns:ns7="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+                     xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:cms:3.0" xmlns:ns5="urn:ihe:iti:xds-b:2007"
+                     xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+                     xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                     xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+            <ns12:SecurityLevel>3</ns12:SecurityLevel>
+            <ns12:Linking>
+                <ns12:MessageID>AAABeEclrwpWiQLQCEuC0lNPU0k=</ns12:MessageID>
+            </ns12:Linking>
+            <ns12:RequireNonRepudiationReceipt>no</ns12:RequireNonRepudiationReceipt>
+        </ns12:Header>
+        <ns13:HsuidHeader xmlns:ns13="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                          xmlns:ns12="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                          xmlns:ns11="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                          xmlns:ns10="http://www.w3.org/2000/09/xmldsig#"
+                          xmlns:ns9="urn:oasis:names:tc:SAML:2.0:assertion"
+                          xmlns:ns8="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                          xmlns:ns7="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+                          xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:cms:3.0" xmlns:ns5="urn:ihe:iti:xds-b:2007"
+                          xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+                          xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                          xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+            <ns13:Assertion IssueInstant="2021-03-18T21:02:35.194Z" Version="2.0" id="HSUID">
+                <ns13:Issuer>CDA</ns13:Issuer>
+                <ns13:AttributeStatement id="HSUIDdata">
+                    <ns13:Attribute Name="nsi:CitizenCivilRegistrationNumber">
+                        <ns13:AttributeValue>0506504003</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:UserType">
+                        <ns13:AttributeValue>nsi:HealthcareProfessional</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:ActingUserCivilRegistrationNumber">
+                        <ns13:AttributeValue>0101584160</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:OrgUsingID" NameFormat="nsi:sor">
+                        <ns13:AttributeValue>293591000016003</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:SystemOwnerName">
+                        <ns13:AttributeValue>system owner</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:SystemName">
+                        <ns13:AttributeValue>MedComCDAViewer</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:SystemVersion">
+                        <ns13:AttributeValue>1.0</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:OrgResponsibleName">
+                        <ns13:AttributeValue>MyOrganisation</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:ConsentOverride">
+                        <ns13:AttributeValue>true</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:ResponsibleUserCivilRegistrationNumber">
+                        <ns13:AttributeValue>0101584160</ns13:AttributeValue>
+                    </ns13:Attribute>
+                    <ns13:Attribute Name="nsi:ResponsibleUserAuthorizationCode">
+                        <ns13:AttributeValue>SRTTQ</ns13:AttributeValue>
+                    </ns13:Attribute>
+                </ns13:AttributeStatement>
+            </ns13:Assertion>
+        </ns13:HsuidHeader>
+    </soap:Header>
+    <soap:Body>
+        <ns4:RetrieveDocumentSetRequest xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+                                        xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                                        xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+                                        xmlns:ns4="urn:ihe:iti:xds-b:2007"
+                                        xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:cms:3.0"
+                                        xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+                                        xmlns:ns7="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+                                        xmlns:ns8="urn:oasis:names:tc:SAML:2.0:assertion"
+                                        xmlns:ns9="http://www.w3.org/2000/09/xmldsig#"
+                                        xmlns:ns10="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                                        xmlns:ns11="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                                        xmlns:ns12="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd">
+            <ns4:DocumentRequest>
+                <ns4:RepositoryUniqueId>2.25.221705058086636180830704676615260644011</ns4:RepositoryUniqueId>
+                <ns4:DocumentUniqueId>2.25.102957549989049931344211753308861534090</ns4:DocumentUniqueId>
+            </ns4:DocumentRequest>
+        </ns4:RetrieveDocumentSetRequest>
+    </soap:Body>
+</soap:Envelope>

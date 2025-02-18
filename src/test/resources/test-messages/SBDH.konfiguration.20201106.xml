@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sh:StandardBusinessDocument xmlns:sh="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader EDIOrderProxy.xsd">
+	<StandardBusinessDocumentHeader xmlns="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.unece.org/cefact/namespaces/StandardBusinessDocumentHeader file:/C:/Users/ovi/OneDrive%20-%20MedCom/Standarder/Modernisering/eDelivery/SBDH/SBDH20040506-02/StandardBusinessDocumentHeader.xsd">
+		<HeaderVersion>1.0</HeaderVersion>
+		<Sender>
+			<Identifier Authority="iso6523-actorid-upis">0088:[eMessage/[LetterType]/Sender/EANIdentifier]</Identifier>
+		</Sender>
+		<Receiver>
+			<Identifier Authority="iso6523-actorid-upis">0088:[eMessage/[LetterType]/Receiver/EANIdentifier]</Identifier>
+		</Receiver>
+		<DocumentIdentification>
+			<Standard>urn:dk:healthcare:specification:oioxml:schema:xsd:[eMessage/[LetterType]]</Standard>
+			<TypeVersion>urn:dk:healthcare:specification:oioxml:schema:xsd:[eMessage/[LetterType]]##urn:www.medcom.dk:messaging:[eMessage/[LetterType]/Letter/TypeCode]::[eMessage/[LetterType]/Letter/VersionCode]</TypeVersion>
+			<!-- InstanceIdentifier UUID -->
+			<InstanceIdentifier>[https://uuidonline.com/?version=5&namespace=[eMessage/[LetterType]/Letter/LetterIdentifier]]</InstanceIdentifier>
+			<Type>urn:dk:healthcare:specification:oioxml:schema:xsd:[eMessage/[LetterType]]##urn:www.medcom.dk:messaging:[eMessage/[LetterType]/Letter/TypeCode]</Type>
+			<MultipleType>false</MultipleType>
+			<CreationDateAndTime>[YYYY-MM-DD]T[TT-MM-SS]+[offset to UTC]</CreationDateAndTime>
+		</DocumentIdentification>
+		<!--Manifest - intentionally not used-->
+		<!--Manifest>
+			<NumberOfItems>1</NumberOfItems>
+			<ManifestItem>
+				<MimeTypeQualifierCode>MimeTypeQualifierCode0</MimeTypeQualifierCode>
+				<UniformResourceIdentifier>http://www.oxygenxml.com/</UniformResourceIdentifier>
+				<Description>Description0</Description>
+				<LanguageCode>LanguageCode0</LanguageCode>
+			</ManifestItem>
+			<ManifestItem>
+				<MimeTypeQualifierCode>MimeTypeQualifierCode1</MimeTypeQualifierCode>
+				<UniformResourceIdentifier>http://www.oxygenxml.com/</UniformResourceIdentifier>
+				<Description>Description1</Description>
+				<LanguageCode>LanguageCode1</LanguageCode>
+			</ManifestItem>
+		</Manifest-->
+		<BusinessScope>
+			<!-- DOCUMENTID -->
+			<Scope> 
+				<Type>DOCUMENTID</Type> 
+					<InstanceIdentifier>
+					urn:dk:healthcare:specification:oioxml:schema:xsd:[eMessage/[LetterType]]##urn:www.medcom.dk:messaging:[eMessage/[LetterType]/Letter/TypeCode]::[eMessage/[LetterType]/Letter/VersionCode]
+					<!-- urn:oasis:names:specification:ubl:schema:xsd:Invoice-2::Invoice##urn:www.cenbii.eu:transaction:biitrns010:ver2.0:extended:urn:www.peppol.eu:bis:peppol4a:ver2.0::2.1-->
+					</InstanceIdentifier>
+					<Identifier>medcom-docid-qns</Identifier>
+			</Scope>
+			<!-- PROCESSID -->
+			<Scope> 
+				<Type>PROCESSID</Type> 
+				<InstanceIdentifier>urn:www.digst.dk:profile:sdn-emergence</InstanceIdentifier>
+				<!-- all optiona -->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:sdn-emergence</InstanceIdentifier-->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:sdn-distribution</InstanceIdentifier-->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:fod-emergence</InstanceIdentifier-->
+				<!--InstanceIdentifier>urn:www.digst.dk:profile:fod-distribution</InstanceIdentifier-->
+				<Identifier>dk-messaging-procid</Identifier>
+			</Scope>
+			<!-- ACKNOWLEDGEMENT - TBD -->
+			<!--Scope>
+				<Type>ACKNOWLEDGEMENT</Type>
+				<InstanceIdentifier>urn:dk:digst:specification:xml:schema:xsd:Acknowledgment##urn:www.digst.dk:messaging:AckType::AckVersion</InstanceIdentifier>
+				<Identifier>digst_ack-docid-qns</Identifier>
+				<BusinessService>
+					<BusinessServiceName>BusinessServiceName0</BusinessServiceName>
+					<ServiceTransaction 
+						TypeOfServiceTransaction="RequestingServiceTransaction" 
+						IsNonRepudiationRequired="false"
+						IsAuthenticationRequired="false" 
+						IsNonRepudiationOfReceiptRequired="false"
+						IsIntelligibleCheckRequired="false" 
+						IsApplicationErrorResponseRequested="true"
+						TimeToAcknowledgeReceipt="1" 
+						TimeToAcknowledgeAcceptance="1"
+						TimeToPerform="1" 
+						Recurrence="[count#]"/>
+				</BusinessService>
+				<CorrelationInformation>
+					<RequestingDocumentCreationDateTime>[YYYY-MM-DD]T[TT-MM-SS]+[offset to UTC]</RequestingDocumentCreationDateTime>
+					<RequestingDocumentInstanceIdentifier>RequestingDocumentInstanceIdentifier0</RequestingDocumentInstanceIdentifier>
+					<ExpectedResponseDateTime>[YYYY-MM-DD]T[TT-MM-SS]+[offset to UTC]</ExpectedResponseDateTime>
+				</CorrelationInformation>
+			</Scope-->
+		</BusinessScope>
+	</StandardBusinessDocumentHeader>
+	<BinaryContent xmlns="http://peppol.eu/xsd/ticc/envelope/1.0" mimeType="application/[mimeType]" encoding="UTF-8">
+		[Base64-encoded xml/edi/fhir meddelelse]
+	</BinaryContent>
+</sh:StandardBusinessDocument>

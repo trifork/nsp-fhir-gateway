@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  
+  The MIT License
+  
+  Original work sponsored and donated by National Board of e-Health (NSI), Denmark 
+  (http://www.nsi.dk)
+  
+  Copyright (C) 2012 National Board of e-Health (NSI), Denmark (http://www.nsi.dk)
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy of
+  this software and associated documentation files (the "Software"), to deal in
+  the Software without restriction, including without limitation the rights to
+  use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+  of the Software, and to permit persons to whom the Software is furnished to do
+  so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+  
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+  
+  -->
+<wsdl:definitions name="NSI-WS-BrokeredNotification"
+	                xmlns="http://schemas.xmlsoap.org/wsdl/" 
+									xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+									xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+									xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+									xmlns:wsnt="http://docs.oasis-open.org/wsn/b-2" 
+									xmlns:wsrf-r="http://docs.oasis-open.org/wsrf/r-2"
+									xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+									xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+									xmlns:tns="http://docs.oasis-open.org/wsn/bw-2" 
+									targetNamespace="http://docs.oasis-open.org/wsn/bw-2">
+
+	<!-- ===================== Types Definitions ====================== -->
+	<wsdl:types>
+
+		<xsd:schema>
+			<xsd:import namespace="http://docs.oasis-open.org/wsn/b-2"
+				schemaLocation="schemas/nas/b-2.xsd" />
+		</xsd:schema>
+
+		<xsd:schema>
+			<xsd:import namespace="http://docs.oasis-open.org/wsrf/r-2"
+				schemaLocation="schemas/nas/r-2.xsd" />
+		</xsd:schema>
+
+		<!-- DGWS and Security extensions -->
+		<xsd:schema>
+			<xsd:import
+				namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+				schemaLocation="schemas/dgws/wsse.xsd" />
+		</xsd:schema>
+
+		<xsd:schema>
+			<xsd:import namespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+				schemaLocation="schemas/dgws/medcom.xsd" />
+		</xsd:schema>
+		
+		<xsd:schema>
+      <xsd:import namespace="http://nsi.dk/advis/v10"
+        schemaLocation="schemas/nas/ID_MCP-v14.xsd" />
+    </xsd:schema>
+
+	</wsdl:types>
+
+	<!-- NAS security header includes -->
+	<wsdl:message name="SecurityHeader">
+		<wsdl:part name="security_header" element="wsse:Security" />
+	</wsdl:message>
+
+	<wsdl:message name="MedcomHeader">
+		<wsdl:part name="medcom_header" element="medcom:Header" />
+	</wsdl:message>
+
+	<message name="DGWSFault">
+		<part name="fault" element="medcom:FaultCode" />
+	</message>
+
+	<!-- ================ NotificationConsumer::Notify ================ Notify( 
+		NotificationMessage (SubscriptionReference, TopicExpression, ProducerReference, 
+		Message)* returns: NotifyResponse -->
+	<wsdl:message name="Notify">
+		<wsdl:part name="Notify" element="wsnt:Notify" />
+	</wsdl:message>
+	<wsdl:message name="NotifyResponse">
+		<wsdl:part name="NotifyResponse" element="wsnt:NotifyResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="NotifyFailedFault">
+		<wsdl:part name="NotifyFailedFault" element="wsnt:NotifyFailedFault" />
+	</wsdl:message>
+
+	<!-- ============== NotificationProducer::Subscribe =============== Subscribe( 
+		(ConsumerEndpointReference, [Filter], [SubscriptionPolicy], [InitialTerminationTime]) 
+		returns: WS-Resource qualified EPR to a Subscription -->
+	<wsdl:message name="SubscribeRequest">
+		<wsdl:part name="SubscribeRequest" element="wsnt:Subscribe" />
+	</wsdl:message>
+
+	<wsdl:message name="SubscribeResponse">
+		<wsdl:part name="SubscribeResponse" element="wsnt:SubscribeResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="SubscribeCreationFailedFault">
+		<wsdl:part name="SubscribeCreationFailedFault" element="wsnt:SubscribeCreationFailedFault" />
+	</wsdl:message>
+
+	<wsdl:message name="TopicExpressionDialectUnknownFault">
+		<wsdl:part name="TopicExpressionDialectUnknownFault"
+			element="wsnt:TopicExpressionDialectUnknownFault" />
+	</wsdl:message>
+
+	<wsdl:message name="InvalidFilterFault">
+		<wsdl:part name="InvalidFilterFault" element="wsnt:InvalidFilterFault" />
+	</wsdl:message>
+
+	<wsdl:message name="InvalidProducerPropertiesExpressionFault">
+		<wsdl:part name="InvalidProducerPropertiesExpressionFault"
+			element="wsnt:InvalidProducerPropertiesExpressionFault" />
+	</wsdl:message>
+
+	<wsdl:message name="InvalidMessageContentExpressionFault">
+		<wsdl:part name="InvalidMessageContentExpressionFault"
+			element="wsnt:InvalidMessageContentExpressionFault" />
+	</wsdl:message>
+
+	<wsdl:message name="UnrecognizedPolicyRequestFault">
+		<wsdl:part name="UnrecognizedPolicyRequestFault" element="wsnt:UnrecognizedPolicyRequestFault" />
+	</wsdl:message>
+
+	<wsdl:message name="UnsupportedPolicyRequestFault">
+		<wsdl:part name="UnsupportedPolicyRequestFault" element="wsnt:UnsupportedPolicyRequestFault" />
+	</wsdl:message>
+
+	<wsdl:message name="NotifyMessageNotSupportedFault">
+		<wsdl:part name="NotifyMessageNotSupportedFault" element="wsnt:NotifyMessageNotSupportedFault" />
+	</wsdl:message>
+
+	<wsdl:message name="UnacceptableInitialTerminationTimeFault">
+		<wsdl:part name="UnacceptableInitialTerminationTimeFault"
+			element="wsnt:UnacceptableInitialTerminationTimeFault" />
+	</wsdl:message>
+
+	<wsdl:message name="InvalidTopicExpressionFault">
+		<wsdl:part name="InvalidTopicExpressionFault" element="wsnt:InvalidTopicExpressionFault" />
+	</wsdl:message>
+
+	<wsdl:message name="TopicNotSupportedFault">
+		<wsdl:part name="TopicNotSupportedFault" element="wsnt:TopicNotSupportedFault" />
+	</wsdl:message>
+
+	<wsdl:message name="MultipleTopicsSpecifiedFault">
+		<wsdl:part name="MultipleTopicsSpecifiedFault" element="wsnt:MultipleTopicsSpecifiedFault" />
+	</wsdl:message>
+
+	<wsdl:message name="NoCurrentMessageOnTopicFault">
+		<wsdl:part name="NoCurrentMessageOnTopicFault" element="wsnt:NoCurrentMessageOnTopicFault" />
+	</wsdl:message>
+
+	<!-- ============== SubscriptionManager::Unsubscribe =============== Unsubscribe() 
+		returns: empty -->
+	<wsdl:message name="UnsubscribeRequest">
+		<wsdl:part name="UnsubscribeRequest" element="wsnt:Unsubscribe" />
+	</wsdl:message>
+
+	<wsdl:message name="UnsubscribeResponse">
+		<wsdl:part name="UnsubscribeResponse" element="wsnt:UnsubscribeResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="UnableToDestroySubscriptionFault">
+		<wsdl:part name="UnableToDestroySubscriptionFault" element="wsnt:UnableToDestroySubscriptionFault" />
+	</wsdl:message>
+
+	<!-- ================= WS-Resource faults ========================= -->
+	<wsdl:message name="ResourceUnknownFault">
+		<part name="ResourceUnknownFault" element="wsrf-r:ResourceUnknownFault" />
+	</wsdl:message>
+
+	<wsdl:portType name="NotificationConsumer">
+		<wsdl:operation name="Notify">
+			<wsdl:input message="tns:Notify" />
+			<wsdl:output message="tns:NotifyResponse"/>
+			<wsdl:fault name="NotifyFailedFault" message="tns:NotifyFailedFault" />
+			<wsdl:fault name="InvalidTopicExpressionFault" message="tns:InvalidTopicExpressionFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- ========= NotificationBroker PortType Definition =========== -->
+	<wsdl:portType name="NotificationBroker">
+
+		<!-- ============= extends NotificationConsumer ============= -->
+		<wsdl:operation name="Notify">
+			<wsdl:input message="tns:Notify" />
+			<wsdl:output message="tns:NotifyResponse"/>
+			<wsdl:fault name="NotifyFailedFault" message="tns:NotifyFailedFault" />
+			<wsdl:fault name="InvalidTopicExpressionFault" message="tns:InvalidTopicExpressionFault" />
+		</wsdl:operation>
+
+		<!-- ============= extends NotificationProducer ============= -->
+		<wsdl:operation name="Subscribe">
+			<wsdl:input message="tns:SubscribeRequest" />
+			<wsdl:output message="tns:SubscribeResponse" />
+			<wsdl:fault name="InvalidFilterFault" message="tns:InvalidFilterFault" />
+			<wsdl:fault name="TopicExpressionDialectUnknownFault"	message="tns:TopicExpressionDialectUnknownFault" />
+			<wsdl:fault name="InvalidTopicExpressionFault" message="tns:InvalidTopicExpressionFault" />
+			<wsdl:fault name="InvalidProducerPropertiesExpressionFault"	message="tns:InvalidProducerPropertiesExpressionFault" />
+			<wsdl:fault name="InvalidMessageContentExpressionFault" message="tns:InvalidMessageContentExpressionFault" />
+			<wsdl:fault name="UnrecognizedPolicyRequestFault" message="tns:UnrecognizedPolicyRequestFault" />
+			<wsdl:fault name="UnacceptableInitialTerminationTimeFault" message="tns:UnacceptableInitialTerminationTimeFault" />
+			<wsdl:fault name="SubscribeCreationFailedFault" message="tns:SubscribeCreationFailedFault" />
+			<wsdl:fault name="DGWSFault" message="tns:DGWSFault" />
+		</wsdl:operation>
+		
+		<!-- ========== SubscriptionManager PortType Definition =========== -->
+		<wsdl:operation name="Unsubscribe">
+			<wsdl:input name="UnsubscribeRequest" message="tns:UnsubscribeRequest" />
+			<wsdl:output name="UnsubscribeResponse" message="tns:UnsubscribeResponse" />
+			<wsdl:fault name="ResourceUnknownFault" message="tns:ResourceUnknownFault" />
+			<wsdl:fault name="UnableToDestroySubscriptionFault"
+				message="tns:UnableToDestroySubscriptionFault" />
+			<wsdl:fault name="DGWSFault" message="tns:DGWSFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:portType name="NotificationProducer">
+		<wsdl:operation name="Subscribe">
+			<wsdl:input message="tns:SubscribeRequest" />
+			<wsdl:output message="tns:SubscribeResponse" />
+			<wsdl:fault name="InvalidFilterFault" message="tns:InvalidFilterFault" />
+			<wsdl:fault name="TopicExpressionDialectUnknownFault"	message="tns:TopicExpressionDialectUnknownFault" />
+			<wsdl:fault name="InvalidTopicExpressionFault" message="tns:InvalidTopicExpressionFault" />
+			<wsdl:fault name="TopicNotSupportedFault" message="tns:TopicNotSupportedFault" />
+			<wsdl:fault name="InvalidProducerPropertiesExpressionFault"	message="tns:InvalidProducerPropertiesExpressionFault" />
+			<wsdl:fault name="InvalidMessageContentExpressionFault" message="tns:InvalidMessageContentExpressionFault" />
+			<wsdl:fault name="UnrecognizedPolicyRequestFault" message="tns:UnrecognizedPolicyRequestFault" />
+			<wsdl:fault name="UnsupportedPolicyRequestFault" message="tns:UnsupportedPolicyRequestFault" />
+			<wsdl:fault name="UnacceptableInitialTerminationTimeFault" message="tns:UnacceptableInitialTerminationTimeFault" />
+			<wsdl:fault name="SubscribeCreationFailedFault" message="tns:SubscribeCreationFailedFault" />
+			<wsdl:fault name="DGWSFault" message="tns:DGWSFault" />
+		</wsdl:operation>
+		
+		<!-- ========== SubscriptionManager PortType Definition =========== -->
+		<wsdl:operation name="Unsubscribe">
+			<wsdl:input name="UnsubscribeRequest" message="tns:UnsubscribeRequest" />
+			<wsdl:output name="UnsubscribeResponse" message="tns:UnsubscribeResponse" />
+			<wsdl:fault name="ResourceUnknownFault" message="tns:ResourceUnknownFault" />
+			<wsdl:fault name="UnableToDestroySubscriptionFault"
+				message="tns:UnableToDestroySubscriptionFault" />
+			<wsdl:fault name="DGWSFault" message="tns:DGWSFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<wsdl:binding name="NotificationConsumerSoap" type="tns:NotificationConsumer">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+
+		<wsdl:operation name="Notify">
+			<soap:operation soapAction="http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="NotifyFailedFault">
+				<soap:fault use="literal" name="NotifyFailedFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTopicExpressionFault">
+				<soap:fault use="literal" name="InvalidTopicExpressionFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:binding name="NotificationBrokerSoap" type="tns:NotificationBroker">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+
+		<wsdl:operation name="Notify">
+			<soap:operation soapAction="http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="NotifyFailedFault">
+				<soap:fault use="literal" name="NotifyFailedFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTopicExpressionFault">
+				<soap:fault use="literal" name="InvalidTopicExpressionFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="Subscribe">
+			<soap:operation soapAction="http://docs.oasis-open.org/wsn/bw-2/NotificationProducer/SubscribeRequest" />
+			<wsdl:input>
+				<soap:header message="tns:SecurityHeader" part="security_header"
+					use="literal" />
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidFilterFault">
+				<soap:fault use="literal" name="InvalidFilterFault" />
+			</wsdl:fault>
+			<wsdl:fault name="TopicExpressionDialectUnknownFault">
+				<soap:fault use="literal" name="TopicExpressionDialectUnknownFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTopicExpressionFault">
+				<soap:fault use="literal" name="InvalidTopicExpressionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidProducerPropertiesExpressionFault">
+				<soap:fault use="literal"	name="InvalidProducerPropertiesExpressionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidMessageContentExpressionFault">
+				<soap:fault use="literal" name="InvalidMessageContentExpressionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnrecognizedPolicyRequestFault">
+				<soap:fault use="literal" name="UnrecognizedPolicyRequestFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnacceptableInitialTerminationTimeFault">
+				<soap:fault use="literal" name="UnacceptableInitialTerminationTimeFault" />
+			</wsdl:fault>
+			<wsdl:fault name="SubscribeCreationFailedFault">
+				<soap:fault use="literal" name="SubscribeCreationFailedFault" />
+			</wsdl:fault>
+			<wsdl:fault name="DGWSFault">
+				<soap:fault use="literal" name="DGWSFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="Unsubscribe">
+			<soap:operation soapAction="http://docs.oasis-open.org/wsn/bw-2/SubscriptionManager/UnsubscribeRequest" />
+			<wsdl:input name="UnsubscribeRequest">
+				<soap:header message="tns:SecurityHeader" part="security_header"
+					use="literal" />
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="UnsubscribeResponse">
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ResourceUnknownFault">
+				<soap:fault use="literal" name="ResourceUnknownFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnableToDestroySubscriptionFault">
+				<soap:fault use="literal" name="UnableToDestroySubscriptionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="DGWSFault">
+				<soap:fault use="literal" name="DGWSFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:binding name="NotificationProducerSoap" type="tns:NotificationProducer">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http"
+			style="document" />
+
+		<wsdl:operation name="Subscribe">
+			<soap:operation soapAction="http://docs.oasis-open.org/wsn/bw-2/NotificationProducer/SubscribeRequest" />
+			<wsdl:input>
+				<soap:header message="tns:SecurityHeader" part="security_header"
+					use="literal" />
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="InvalidFilterFault">
+				<soap:fault use="literal" name="InvalidFilterFault" />
+			</wsdl:fault>
+			<wsdl:fault name="TopicExpressionDialectUnknownFault">
+				<soap:fault use="literal" name="TopicExpressionDialectUnknownFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidTopicExpressionFault">
+				<soap:fault use="literal" name="InvalidTopicExpressionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="TopicNotSupportedFault">
+				<soap:fault use="literal" name="TopicNotSupportedFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidProducerPropertiesExpressionFault">
+				<soap:fault use="literal"	name="InvalidProducerPropertiesExpressionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="InvalidMessageContentExpressionFault">
+				<soap:fault use="literal" name="InvalidMessageContentExpressionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnrecognizedPolicyRequestFault">
+				<soap:fault use="literal" name="UnrecognizedPolicyRequestFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnsupportedPolicyRequestFault">
+				<soap:fault use="literal" name="UnsupportedPolicyRequestFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnacceptableInitialTerminationTimeFault">
+				<soap:fault use="literal" name="UnacceptableInitialTerminationTimeFault" />
+			</wsdl:fault>
+			<wsdl:fault name="SubscribeCreationFailedFault">
+				<soap:fault use="literal" name="SubscribeCreationFailedFault" />
+			</wsdl:fault>
+			<wsdl:fault name="DGWSFault">
+				<soap:fault use="literal" name="DGWSFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="Unsubscribe">
+			<soap:operation soapAction="http://docs.oasis-open.org/wsn/bw-2/SubscriptionManager/UnsubscribeRequest" />
+			<wsdl:input name="UnsubscribeRequest">
+				<soap:header message="tns:SecurityHeader" part="security_header"
+					use="literal" />
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="UnsubscribeResponse">
+				<soap:header message="tns:MedcomHeader" part="medcom_header"
+					use="literal" />
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="ResourceUnknownFault">
+				<soap:fault use="literal" name="ResourceUnknownFault" />
+			</wsdl:fault>
+			<wsdl:fault name="UnableToDestroySubscriptionFault">
+				<soap:fault use="literal" name="UnableToDestroySubscriptionFault" />
+			</wsdl:fault>
+			<wsdl:fault name="DGWSFault">
+				<soap:fault use="literal" name="DGWSFault" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:service name="NotificationConsumerService">
+		<wsdl:port name="Soap" binding="tns:NotificationConsumerSoap">
+			<soap:address location="http://cxf.apache.org/wsnotification" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="NotificationBrokerService">
+		<wsdl:port name="Soap" binding="tns:NotificationBrokerSoap">
+			<soap:address location="http://cxf.apache.org/wsnotification" />
+		</wsdl:port>
+	</wsdl:service>
+	<wsdl:service name="NotificationProducerService">
+		<wsdl:port name="Soap" binding="tns:NotificationProducerSoap">
+			<soap:address location="http://cxf.apache.org/wsnotification" />
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>

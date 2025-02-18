@@ -1,0 +1,28 @@
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+    <soap:Header>
+        <Action xmlns="http://www.w3.org/2005/08/addressing">urn:ihe:iti:2007:RetrieveDocumentSetResponse</Action>
+        <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:43f78a59-44c6-4aa2-8f8d-f022ed751919
+        </MessageID>
+        <To xmlns="http://www.w3.org/2005/08/addressing">http://www.w3.org/2005/08/addressing/anonymous</To>
+        <RelatesTo xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:7e366112-95cd-41bb-aad7-04c4c7cf3c89
+        </RelatesTo>
+    </soap:Header>
+    <soap:Body>
+        <ns2:RetrieveDocumentSetResponse xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+                                         xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+                                         xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                                         xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+                                         xmlns:ns2="urn:ihe:iti:xds-b:2007">
+            <ns4:RegistryResponse status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success"/>
+            <ns2:DocumentResponse>
+                <ns2:RepositoryUniqueId>2.25.221705058086636180830704676615260644011</ns2:RepositoryUniqueId>
+                <ns2:DocumentUniqueId>2.25.39144109914121748231072415559042442202</ns2:DocumentUniqueId>
+                <ns2:mimeType>text/xml</ns2:mimeType>
+                <ns2:Document>
+                    <xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include"
+                                 href="cid:eff581f9-f6eb-4300-b13d-45c09357cf97-2@urn%3Aihe%3Aiti%3Axds-b%3A2007"/> <!-- NB: Se attachment i dds2gateway-response-attachment -->
+                </ns2:Document>
+            </ns2:DocumentResponse>
+        </ns2:RetrieveDocumentSetResponse>
+    </soap:Body>
+</soap:Envelope>

@@ -1,0 +1,50 @@
+<Emessage xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2005/08/07/">
+    <Envelope>
+        <Sent>
+            <Date>2021-06-24</Date>
+            <Time>10:08</Time>
+        </Sent>
+        <Identifier>EPIC394363364</Identifier>
+        <AcknowledgementCode>pluspositivkvitt</AcknowledgementCode>
+    </Envelope>
+    <NotificationOfAdmission>
+        <Letter>
+            <Identifier>EPIC394363364</Identifier>
+            <VersionCode>XD2030C</VersionCode>
+            <StatisticalCode>XDIS20</StatisticalCode>
+            <Authorisation>
+                <Date>2021-06-24</Date>
+                <TimeWithSec>10:08:19</TimeWithSec>
+            </Authorisation>
+            <TypeCode>XDIS20</TypeCode>
+            <StatusCode>nytbrev</StatusCode>
+            <NotificationIdentifier>000000000008E4D336F3980167518359</NotificationIdentifier>
+        </Letter>
+        <Sender>
+            <EANIdentifier>5790002515200</EANIdentifier>
+            <Identifier>1330520</Identifier>
+            <IdentifierCode>sygehusafdelingsnummer</IdentifierCode>
+            <OrganisationName>Amager og Hvidovre Hospital</OrganisationName>
+            <DepartmentName>Hjertemedicinsk sengeafdeling, Hvi*</DepartmentName>
+            <UnitName>Hjertemedicinsk Sengeafsnit</UnitName>
+            <TelephoneSubscriberIdentifier>38623010</TelephoneSubscriberIdentifier>
+            <AnswerTo>
+                <EANIdentifier>5790002515200</EANIdentifier>
+            </AnswerTo>
+        </Sender>
+        <Receiver>
+            <EANIdentifier>5790002508226</EANIdentifier>
+            <Identifier>101</Identifier>
+            <IdentifierCode>kommunenummer</IdentifierCode>
+            <OrganisationName>Kbenhavns Kommune</OrganisationName>
+        </Receiver>
+        <Patient>
+            <CivilRegistrationNumber>1111111111</CivilRegistrationNumber>
+            <EpisodeOfCareStatusCode>indlagt</EpisodeOfCareStatusCode>
+        </Patient>
+        <Admission>
+            <Date>2021-06-24</Date>
+            <Time>10:08</Time>
+        </Admission>
+    </NotificationOfAdmission>
+</Emessage>

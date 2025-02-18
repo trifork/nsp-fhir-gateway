@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:medcom="urn:oio:medcom:cprservice:1.0.3"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:oio:medcom:cprservice:1.0.3"
+    elementFormDefault="qualified" 
+    attributeFormDefault="unqualified">
+
+    <xs:element name="FrontierSocialSecurityAgencyIdentifier" type="medcom:FrontierSocialSecurityAgencyIdentifierType">
+        <xs:annotation>
+            <xs:documentation>Grænsegængers forsikringsinstans kode.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:simpleType name="FrontierSocialSecurityAgencyIdentifierType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="FrontierSocialSecurityAgency" type="xs:string">
+        <xs:annotation>
+            <xs:documentation>Grænsegængers forsikringsinstans.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:element name="FrontierSocialSecurityIdentifier" type="medcom:FrontierSocialSecurityIdentifierType">
+        <xs:annotation>
+            <xs:documentation>Grænsegængers forsikringsnummer.</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:simpleType name="FrontierSocialSecurityIdentifierType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>

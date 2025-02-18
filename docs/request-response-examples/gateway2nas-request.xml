@@ -1,0 +1,38 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <Action xmlns="http://www.w3.org/2005/08/addressing">http://docs.oasis-open.org/wsn/bw-2/NotificationConsumer/Notify</Action>
+        <MessageID xmlns="http://www.w3.org/2005/08/addressing">urn:uuid:980ccb94-26ce-4f68-b652-d3e01af5af17</MessageID>
+        <To xmlns="http://www.w3.org/2005/08/addressing">https://nas2-nsp.nsptest.medcom.dk/notificationbroker/service</To>
+        <ReplyTo xmlns="http://www.w3.org/2005/08/addressing">
+            <Address>http://www.w3.org/2005/08/addressing/anonymous</Address>
+        </ReplyTo>
+    </soap:Header>
+    <soap:Body>
+        <ns2:Notify xmlns="http://www.w3.org/2005/08/addressing" xmlns:ns2="http://docs.oasis-open.org/wsn/b-2" xmlns:ns3="http://docs.oasis-open.org/wsrf/bf-2" xmlns:ns4="http://docs.oasis-open.org/wsn/t-1
+" xmlns:ns5="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns6="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns7="
+urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#" xmlns:ns9="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" xmlns:ns10="http://nsi.dk/advis/v10" xmlns:ns11="http://m
+edcom.dk/nsp-2g" xmlns:ns12="http://docs.oasis-open.org/wsrf/r-2">
+            <ns2:NotificationMessage>
+                <ns2:Topic Dialect="http://docs.oasis-open.org/wsn/t-1/TopicExpression/Simple">http://medcom.dk/messagecommunication/2020/11/05:NewMessage</ns2:Topic>
+                <ns2:Message>
+                    <ns10:NotifyContent id="0506504003" idType="http://nsi.dk/advis/v10/CPR" isSystemNotification="false">
+                        <ns11:Notification>
+                            <ns11:personIdentifier>
+                                <ns11:standard>1.2.208.176.1.2</ns11:standard>
+                                <ns11:value>0506504003</ns11:value>
+                            </ns11:personIdentifier>
+                            <ns11:documentId>urn:dk:healthcare:medcom:oioxml:schema:xsd:HospitalReferral##urn:www.medcom.dk:messaging:HospitalReferral/Letter/TypeCode/XREF01::HospitalReferral/Letter/VersionCode/XH0130R</ns11:documentId>
+                            <ns11:originalSender>0088:5790000121526</ns11:originalSender>
+                            <ns11:finalRecipient>0088:5790000121526</ns11:finalRecipient>
+                            <ns11:senderId>1170101</ns11:senderId>
+                            <ns11:receiverId>1170102</ns11:receiverId>
+                            <ns11:standard>urn:dk:healthcare:medcom:oioxml:schema:xsd:HospitalReferral</ns11:standard>
+                            <ns11:type>XREF01</ns11:type>
+                            <ns11:typeVersion>XH0130R</ns11:typeVersion>
+                        </ns11:Notification>
+                    </ns10:NotifyContent>
+                </ns2:Message>
+            </ns2:NotificationMessage>
+        </ns2:Notify>
+    </soap:Body>
+</soap:Envelope>

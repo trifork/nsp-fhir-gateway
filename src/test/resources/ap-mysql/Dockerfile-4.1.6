@@ -1,0 +1,14 @@
+FROM mysql:8.0
+
+# Copy configuration script
+COPY ./conf.sh /docker-entrypoint-initdb.d/
+
+# Create folder for storing db scripts
+RUN mkdir -p /scripts
+WORKDIR /scripts
+
+# Copy the database scripts: 
+COPY ./scripts/4.1.6/mysql5innoDb-4.1.6.ddl /scripts/mysql5innodb.ddl
+COPY ./scripts/4.1.6/mysql5innoDb-4.1.6-data.ddl /scripts/mysql5innodb-data.ddl
+
+VOLUME /var/lib/mysql

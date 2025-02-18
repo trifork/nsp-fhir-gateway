@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<eb:Messaging xmlns:eb="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/"
+              xmlns:ns2="http://www.w3.org/2003/05/soap-envelope" ns2:mustUnderstand="true">
+    <eb:UserMessage mpc="http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/defaultMPC">
+        <eb:MessageInfo>
+            <eb:Timestamp>2020-12-15T08:04:15.000Z</eb:Timestamp>
+            <eb:MessageId>6f296d43-655c-462b-8906-e9b0350a3da9@domibus.eu</eb:MessageId>
+        </eb:MessageInfo>
+        <eb:PartyInfo>
+            <eb:From>
+                <eb:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered">medcom-edelivery-gateway
+                    (funktionscertifikat)
+                </eb:PartyId>
+                <eb:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/initiator</eb:Role>
+            </eb:From>
+            <eb:To>
+                <eb:PartyId type="urn:oasis:names:tc:ebcore:partyid-type:unregistered">eDelivery Access Points2
+                    (funktionscertifikat)
+                </eb:PartyId>
+                <eb:Role>http://docs.oasis-open.org/ebxml-msg/ebms/v3.0/ns/core/200704/responder</eb:Role>
+            </eb:To>
+        </eb:PartyInfo>
+        <eb:CollaborationInfo>
+            <eb:Service type="tc1">bdx:noprocess</eb:Service>
+            <eb:Action>TC1Leg1</eb:Action>
+            <eb:ConversationId>e41ea65d-933c-42d7-bd7f-78d477eb8bfd@domibus.eu</eb:ConversationId>
+        </eb:CollaborationInfo>
+        <eb:MessageProperties>
+            <eb:Property name="originalSender">urn:oasis:names:tc:ebcore:partyid-type:unregistered:C1</eb:Property>
+            <eb:Property name="finalRecipient" type="iso6523-actorid-upis">9902:DK34051179</eb:Property>
+        </eb:MessageProperties>
+        <eb:PayloadInfo>
+            <eb:PartInfo href="cid:message">
+                <eb:PartProperties>
+                    <eb:Property name="MimeType">text/xml</eb:Property>
+                    <eb:Property name="CompressionType">application/gzip</eb:Property>
+                </eb:PartProperties>
+            </eb:PartInfo>
+        </eb:PayloadInfo>
+    </eb:UserMessage>
+</eb:Messaging>

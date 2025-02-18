@@ -1,0 +1,6 @@
+<ns2:Envelope xmlns:ns2="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:ns4="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#" xmlns:ns6="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns7="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" xmlns:ns8="http://www.w3.org/2005/08/addressing" xmlns:ns9="http://docs.oasis-open.org/wsn/b-2" xmlns:ns10="http://docs.oasis-open.org/wsrf/bf-2" xmlns:ns11="http://docs.oasis-open.org/wsrf/rp-2" xmlns:ns12="http://docs.oasis-open.org/wsn/t-1" xmlns:ns13="http://nsi.dk/advis/v10">
+    <ns2:Header/>
+    <ns2:Body>
+        <ns9:NotifyResponse/>
+    </ns2:Body>
+</ns2:Envelope>
